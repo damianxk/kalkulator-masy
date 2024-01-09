@@ -1,0 +1,13 @@
+footer {
+    background: #d53844;
+    padding:10px;
+    position:fixed;
+    bottom:0;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1400px;
+}
+
+.footerText{
+    color: white;
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Pręty okrągłe",
+    "image": "/stal/okragle.png"
+  },
+  {
+    "id": 2,
+    "name": "Pręty kwadratowe",
+    "image": "/stal/kwadratowe.png"
+  },
+  {
+    "id": 3,
+    "name": "Pręty sześciokątne",
+    "image": "/stal/szesciokatne.png"
+  },
+  {
+    "id": 4,
+    "name": "Płaskowniki",
+    "image": "/stal/plaskowniki.png"
+  },
+  {
+    "id": 5,
+    "name": "Rury okrągłe",
+    "image": "/stal/rury.png"
+  },
+  {
+    "id": 6,
+    "name": "Profile zamknięte kwadratowe",
+    "image": "/stal/zamkwadrat.png"
+  },
+  {
+    "id": 7,
+    "name": "Profile zamknięte",
+    "image": "/stal/zamkniete.png"
+  },
+  {
+    "id": 8,
+    "name": "Kątowniki równoramienne",
+    "image": "/stal/rownoramienne.png"
+  },
+  {
+    "id": 9,
+    "name": "Kątowniki",
+    "image": "/stal/katowniki.png"
+  },
+  {
+    "id": 10,
+    "name": "Ceowniki",
+    "image": "/stal/ceowniki.png"
+  },
+  {
+    "id": 11,
+    "name": "Blachy",
+    "image": "/stal/blachy.png"
+  }
+]

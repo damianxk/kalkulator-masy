@@ -1,0 +1,14 @@
+.links{
+    padding:20px;
+    background-color: #d53844;
+    border: 1px solid #d53844;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    transition: 0.6s;
+}
+
+.links:hover {
+    background-color: transparent;
+    color: black;
+}
