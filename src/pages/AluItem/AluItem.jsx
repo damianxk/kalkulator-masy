@@ -4,7 +4,6 @@ import AluItemDetail from "../../components/AluItemDetail/AluItemDetail";
 import items from "../../data/alu.json";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import css from "../StalItem/StalItem.module.css";
 
 const AluItem = () => {
   const { itemId } = useParams();
@@ -14,9 +13,19 @@ const AluItem = () => {
   return (
     <>
       <Header />
-      <Link to={`/aluminium`} state={{ from: location }} className={css.links}>
-        Powrót do aluminium
-      </Link> 
+      <div className="linksdiv">
+        <Link to={`/aluminium`} state={{ from: location }} className="links">
+          <span className="linkback">Powrót do aluminium</span>
+        </Link>
+        <h2
+          style={{
+            display: "inline",
+            lineHeight: 1,
+          }}
+        >
+          ALUMINIUM {selectedItem.name}
+        </h2>
+      </div>
       {selectedItem ? (
         <AluItemDetail item={selectedItem} />
       ) : (

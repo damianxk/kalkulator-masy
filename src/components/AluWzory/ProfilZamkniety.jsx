@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 const ProfilZamkniety = () => {
-  const [x, setX] = useState("");
-  const [y, setY] = useState("");
-  const [zBox, setZBox] = useState("");
-  const [length, setLength] = useState("");
+  const [x, setX] = useState('');
+  const [y, setY] = useState('');
+  const [zBox, setZBox] = useState('');
+  const [length, setLength] = useState('');
   const [totalWeight, setTotalWeight] = useState(0);
   const [totalWeightPerMeter, setTotalWeightPerMeter] = useState(0);
 
@@ -13,11 +13,13 @@ const ProfilZamkniety = () => {
   }, [x / 1000, y / 1000, zBox / 1000, length]);
 
   const calculateWeight = () => {
-    const calculatedWeight = zBox * (2 * (x / 1000) + 2 * (y / 1000)) * 2.7 / 1000 ; // kg/cm
-    const weight = calculatedWeight * length * 100; // kg
-    const weightPerMeter = weight / length * 10; // kg/m
+    const outerVolume = x * y * 1000;
+    const innerVolume = (x - 2 * zBox) * (y - 2 * zBox) * 1000;
+    const volume = outerVolume - innerVolume;
+    const weightPerMeter = (volume * 2.7) / 1000000; // Assuming the density of aluminium is 2.7 g/cm^3
+    const totalWeight = weightPerMeter * length;
 
-    setTotalWeight(`${(weight*10).toFixed(3)}`);
+    setTotalWeight(`${totalWeight.toFixed(3)}`);
     setTotalWeightPerMeter(`${weightPerMeter.toFixed(3)}`);
   };
 
@@ -28,7 +30,7 @@ const ProfilZamkniety = () => {
           Szerokość (mm):
           <input
             type="number"
-            placeholder="wpisz szerokość (mm)"
+            placeholder="wpisz szerokość profilu (mm)"
             value={x}
             onChange={(e) => {
               setX(e.target.value);
@@ -40,7 +42,7 @@ const ProfilZamkniety = () => {
           Wysokość (mm):
           <input
             type="number"
-            placeholder="wpisz wysokość (mm)"
+            placeholder="wpisz wysokość profilu (mm)"
             value={y}
             onChange={(e) => {
               setY(e.target.value);
@@ -52,7 +54,7 @@ const ProfilZamkniety = () => {
           Grubość ścianki (mm):
           <input
             type="number"
-            placeholder="wpisz grubość ścianki (mm)"
+            placeholder="wpisz grubość ścianki profilu (mm)"
             value={zBox}
             onChange={(e) => {
               setZBox(e.target.value);
@@ -61,7 +63,7 @@ const ProfilZamkniety = () => {
         </label>
         <br />
         <label>
-          Długość profilu (m):
+          Długość profilu(m):
           <input
             type="number"
             placeholder="wpisz długość profilu (m)"
@@ -73,8 +75,8 @@ const ProfilZamkniety = () => {
         </label>
       </section>
       <br />
-      <p>Waga profilu na metr: <span style={{color: 'red', fontSize:'20px',}}>{totalWeightPerMeter}</span> kg/m</p>
-      <p>Waga profilu: <span style={{color: 'red', fontSize:'20px',}}>{totalWeight}</span> kg</p>
+      <p>Masa na metr profilu: <span style={{color: 'red', fontSize:'20px',}}>{totalWeightPerMeter}</span> kg/m</p>
+      <p>Całkowita masa profilu: <span style={{color: 'red', fontSize:'20px',}}>{totalWeight}</span> kg</p>
     </div>
   );
 };

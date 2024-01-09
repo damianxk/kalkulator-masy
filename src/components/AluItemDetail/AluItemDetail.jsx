@@ -1,26 +1,33 @@
 import React from "react";
-import {PretOkraglyAlu, PretKwadrat, PretSzescio, Plaskownik, Rura, ProfilZamknietyKwadratowy, KatownikiRownoramienne, Katowniki, Ceowniki, Blachy} from "../AluWzory";
+import {
+  PretKwadrat,
+  ProfilZamknietyKwadratowy,
+  KatownikiRownoramienne,
+  Katowniki,
+  Ceowniki,
+  Blachy,
+} from "../AluWzory";
 import ProfilZamkniety from "../AluWzory/ProfilZamkniety";
-
 
 const AluItemDetail = ({ item }) => {
   return (
     <>
-        
-        <h2 style={{fontSize:'55px',}}>{item.name}</h2>
-        <img src={item.image} alt={item.name} />
-      
-      {item.id === 1 ? <PretOkraglyAlu /> : null}
+      <div className="topItem">
+        {/* <h2 style={{ fontSize: "55px" }}>{item.name}</h2> */}
+        <img
+          src={item.image}
+          alt={item.name}
+          style={{ maxWidth: "120px", margin: "0 auto" }}
+        />
+      </div>
       {item.id === 2 ? <PretKwadrat /> : null}
-      {item.id === 3 ? <PretSzescio /> : null}
-      {item.id === 4 ? <Plaskownik /> : null}
-      {item.id === 5 ? <Rura /> : null}
       {item.id === 6 ? <ProfilZamknietyKwadratowy /> : null}
       {item.id === 7 ? <ProfilZamkniety /> : null}
       {item.id === 8 ? <KatownikiRownoramienne /> : null}
       {item.id === 9 ? <Katowniki /> : null}
       {item.id === 10 ? <Ceowniki /> : null}
       {item.id === 11 ? <Blachy /> : null}
+      {item.id === 12 ? <Blachy /> : null}
     </>
   );
 };

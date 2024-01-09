@@ -3,7 +3,7 @@ import css from './Footer.module.css';
 const Footer = () => {
     return(
         <footer>
-            <span className={css.footerText}>Copyright &copy; Ulamex 2023</span>  
+            <span className={css.footerText}>Kliknij tutaj, żeby znaleźć hurtownie stali</span>  
         </footer>
     )
 }

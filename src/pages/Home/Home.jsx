@@ -16,11 +16,10 @@ const Home = () => {
         <section className={css.home}>
           <div className={css.buttonList}>
             <h2 className={css.material}>
-              Witaj na naszej stronie! Nasz kalkulator do obliczania wagi stali
-              i aluminium został zaprojektowany, aby ułatwić Ci życie. Bez
-              względu na to, czy jesteś inżynierem, architektem, czy hobbystą,
-              nasze narzędzie dostarczy Ci precyzyjne i szybkie wyniki. Zacznij
-              już teraz i odkryj, jak łatwe może być obliczanie wagi metali!
+              Witaj na naszej stronie! 
+              <br />
+              Nasz kalkulator do obliczania wagi stali
+              i aluminium został zaprojektowany, aby ułatwić Ci życie. Nasze narzędzie dostarczy Ci precyzyjne i szybkie wyniki. Odkryj, jak łatwe może być obliczanie wagi metali!
             </h2>
             <span>Wybierz materiał do obliczeń:</span>
             <Link

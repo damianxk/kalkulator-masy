@@ -1,8 +1,28 @@
 [
     {
+      "id": 1,
+      "name": "Pręty okrągłe",
+      "image": "//okragle.png"
+    },
+    {
       "id": 2,
       "name": "Pręty kwadratowe",
       "image": "/svg/pret-kwadratowy.svg"
+    },
+    {
+      "id": 3,
+      "name": "Pręty sześciokątne",
+      "image": "/stal/szesciokatne.png"
+    },
+    {
+      "id": 4,
+      "name": "Płaskowniki",
+      "image": "/stal/plaskowniki.png"
+    },
+    {
+      "id": 5,
+      "name": "Rury okrągłe",
+      "image": "/stal/rury.png"
     },
     {
       "id": 6,
@@ -33,11 +53,6 @@
       "id": 11,
       "name": "Blachy",
       "image": "/svg/blacha.svg"
-    },
-    {
-      "id": 12,
-      "name": "Dwuteowniki",
-      "image": "/svg/dwuteownik.svg"
     }
   ]
   
