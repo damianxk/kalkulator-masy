@@ -8,11 +8,7 @@ const Aluminium = () => {
   const location = useLocation();
   return (
     <>
-      <Header />
       <main>
-        <Link to={`/`} state={{ from: location }} className='links'>
-          Powrót do strony głównej
-        </Link>
         <StalList items={items} />
       </main>
       <Footer />

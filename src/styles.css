@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 *{
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html {
+  overflow-y: scroll;
 }
 
 body {
@@ -13,7 +20,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   max-width: 1400px;
   margin: 0 auto;
-  background-color: #fdf9f9;
+  background-color: #e7e7e7;
 }
 
 code {

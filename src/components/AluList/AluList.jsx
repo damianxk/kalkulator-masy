@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import css from "./AluList.module.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import AluItemDetail from "../../components/AluItemDetail/AluItemDetail";
 
 const AluList = ({ items }) => {
@@ -19,7 +18,7 @@ const AluList = ({ items }) => {
                 }`}
               >
                 <div>
-                  <LazyLoadImage
+                  <img
                     src={item.image}
                     alt={item.name}
                     height="30"

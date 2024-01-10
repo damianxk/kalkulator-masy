@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import css from './StalList.module.css';
+import css from '../AluList/AluList.module.css';
 
 const StalList = ({items}) => {
   return (

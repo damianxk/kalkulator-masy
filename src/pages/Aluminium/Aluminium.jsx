@@ -8,21 +8,6 @@ const Aluminium = () => {
   const location = useLocation();
   return (
     <>
-      <Header />
-
-      <div className="linksdiv">
-        <Link to={`/`} state={{ from: location }} className="links">
-          Powrót do strony głównej
-        </Link>
-        <h2
-          style={{
-            display: "inline",
-            lineHeight: 1,
-          }}
-        >
-          ALUMINIUM
-        </h2>
-      </div>
       <main>
         <AluList items={items} />
       </main>
