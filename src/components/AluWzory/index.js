@@ -9,3 +9,4 @@ export { default as KatownikiRownoramienne } from './Rownoramienne';
 export { default as Katowniki } from './Katowniki';
 export { default as Ceowniki } from './Ceowniki';
 export { default as Blachy } from './Blachy';
+export { default as Dwuteownik } from './Dwuteowniki';

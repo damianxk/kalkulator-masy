@@ -13,19 +13,7 @@ const AluItem = () => {
   return (
     <>
       <Header />
-      <div className="linksdiv">
-        <Link to={`/aluminium`} state={{ from: location }} className="links">
-          <span className="linkback">Powrót do aluminium</span>
-        </Link>
-        <h2
-          style={{
-            display: "inline",
-            lineHeight: 1,
-          }}
-        >
-          ALUMINIUM {selectedItem.name}
-        </h2>
-      </div>
+
       {selectedItem ? (
         <AluItemDetail item={selectedItem} />
       ) : (

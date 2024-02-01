@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-const PretSzescio = () => {
-  const [sideLength, setSideLength] = useState(0);
-  const [length, setLength] = useState(1);
-  const [totalWeight, setTotalWeight] = useState(0);
-  const [totalWeightPerMeter, setTotalWeightPerMeter] = useState(0);
+const PretSzescio = ({ density, onWeightChange }) => {
+  const [sideLength, setSideLength] = useState();
+  const [length, setLength] = useState();
+  const [totalWeight, setTotalWeight] = useState();
+  const [totalWeightPerMeter, setTotalWeightPerMeter] = useState();
 
   useEffect(() => {
     calculateWeight();
-  }, [sideLength / 100, length]);
+  }, [sideLength / 100, length, density]);
 
   const calculateWeight = () => {
     const sanitizedSideLength = sanitize(sideLength);
@@ -20,11 +20,15 @@ const PretSzescio = () => {
     const volume = surfaceArea * length;
 
     // Obliczanie masy pręta
-    const weight = (volume * 2.7) / 100;
-    const weightPerMeter = (surfaceArea * 100 * 2.7) / 10000;
+    const weight = (volume * density) / 100;
+    const weightPerMeter = (surfaceArea * 100 * density) / 10000;
 
     setTotalWeight(`${weight.toFixed(3)}`);
     setTotalWeightPerMeter(`${weightPerMeter.toFixed(3)}`);
+    onWeightChange({
+      totalWeight: weight.toFixed(3),
+      totalWeightPerKg: weightPerMeter.toFixed(3),
+    });
   };
 
   // Funkcja do czyszczenia danych
@@ -37,41 +41,32 @@ const PretSzescio = () => {
     <div className="obliczenia">
       <section style={{ display: "flex", gap: "50px" }}>
         <label>
-          Krótsza przekątna (mm):
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz długość boku pręta (mm)"
+            placeholder="[A] Wpisz przekątną pręta (mm)"
             value={sideLength}
             onChange={(e) => {
               setSideLength(e.target.value);
             }}
+            name="przekatna"
           />
         </label>
-        <br />
         <label>
-          Długość pręta (m):
+         
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz długość pręta (m)"
+            placeholder="[B] Wpisz długość pręta (m)"
             value={length}
             onChange={(e) => {
               setLength(e.target.value);
             }}
+            name="dlugosc"
           />
         </label>
       </section>
-      <br />
-      <p>
-        Przybliżona waga na metr pręta:{" "}
-        <span style={{ color: "red", fontSize: "20px" }}>
-          {totalWeightPerMeter}
-        </span>{" "}
-        kg/m
-      </p>
-      <p>
-        Przybliżona całkowita waga pręta:{" "}
-        <span style={{ color: "red", fontSize: "20px" }}>{totalWeight}</span> kg
-      </p>
+
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Plaskownik = () => {
+const Plaskownik = ({ density, onWeightChange }) => {
   const [width, setWidth] = useState("");
   const [thickness, setThickness] = useState("");
   const [length, setLength] = useState("");
@@ -9,59 +9,62 @@ const Plaskownik = () => {
 
   useEffect(() => {
     calculateWeight();
-  }, [width / 100, thickness / 100, length]);
+  }, [width / 100, thickness / 100, length, density]);
 
   const calculateWeight = () => {
     const volume = width * thickness * length * 100; // cm^3
-    const weight = volume * 2.7 / 100000; // kg
-    const weightPerMeter = (width * thickness * 1 * 10 * 2.7) / 10000; // kg/m
+    const weight = (volume * density) / 100000; // kg
+    const weightPerMeter = (width * thickness * 1 * 10 * density) / 10000; // kg/m
 
     setTotalWeight(`${weight.toFixed(3)}`);
     setTotalWeightPerMeter(`${weightPerMeter.toFixed(3)}`);
+    onWeightChange({
+      totalWeight: weight.toFixed(3),
+      totalWeightPerKg: weightPerMeter.toFixed(3),
+    });
   };
 
   return (
-    <div className='obliczenia'> 
+    <div className="obliczenia">
       <section style={{ display: "flex", gap: "50px" }}>
         <label>
-          Szerokość (mm):
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz szerokość płaskownika (mm)"
+            placeholder="[A] Wpisz szerokość płaskownika (mm)"
             value={width}
             onChange={(e) => {
               setWidth(e.target.value);
             }}
+            name="szerokosc"
           />
         </label>
-        <br />
         <label>
-          Grubość (mm):
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz grubość płaskownika (mm)"
+            placeholder="[B] Wpisz grubość płaskownika (mm)"
             value={thickness}
             onChange={(e) => {
               setThickness(e.target.value);
             }}
+            name="grubosc"
           />
         </label>
-        <br />
         <label>
-          Długość płaskownika (m):
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz długość płaskownika(m)"
+            placeholder="[C] Wpisz długość płaskownika(m)"
             value={length}
             onChange={(e) => {
               setLength(e.target.value);
             }}
+            name="dlugosc"
           />
         </label>
       </section>
-      <br />
-      <p>Waga płaskownika: <span style={{color: 'red', fontSize:'20px',}}>{totalWeight}</span> kg</p>
-      <p>Przybliżona waga na metr płaskownika: <span style={{color: 'red', fontSize:'20px',}}>{totalWeightPerMeter}</span> kg/m</p>
+
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Blachy = () => {
+const Blachy = ({ density, onWeightChange }) => {
   const [plotid, setPlotid] = useState("");
   const [storis, setStoris] = useState("");
   const [ilgis, setIlgis] = useState("");
@@ -8,60 +8,58 @@ const Blachy = () => {
 
   useEffect(() => {
     calculateWeight();
-  }, [plotid / 1000, storis, ilgis / 1000]);
+  }, [plotid / 1000, storis, ilgis / 1000, density]);
 
   const calculateWeight = () => {
-    let volume = (plotid / 1000) * storis * (ilgis / 1000) * 2.7;
+    let volume = (plotid / 1000) * storis * (ilgis / 1000) * density;
     const weight = volume;
 
     setTotalWeight(`${weight.toFixed(3)}`);
+    onWeightChange({
+      totalBlacha: weight.toFixed(3)
+    });
   };
 
   return (
     <div className="obliczenia">
       <section style={{ display: "flex", gap: "50px" }}>
-        <label>
-          Grubość (mm):
+        <label name="szerokosc">
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz grubość (mm)"
-            value={plotid}
-            onChange={(e) => {
-              setPlotid(e.target.value);
-            }}
-          />
-        </label>
-        <br />
-        <label>
-          Szerokość (mm):
-          <input
-            type="number"
-            placeholder="wpisz szerokość (mm)"
+            placeholder="[A] Wpisz szerokość (mm)"
             value={storis}
             onChange={(e) => {
               setStoris(e.target.value);
             }}
+            name="szerokosc"
           />
         </label>
-        <br />
         <label>
-          Długość (mm):
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz długość (mm)"
+            placeholder="[B] Wpisz grubość (mm)"
+            value={plotid}
+            onChange={(e) => {
+              setPlotid(e.target.value);
+            }}
+            name="grubosc"
+            />
+        </label>
+        <label>
+          <input
+            inputMode="decimal"
+            type="number"
+            placeholder="[C] Wpisz długość (mm)"
             value={ilgis}
             onChange={(e) => {
               setIlgis(e.target.value);
             }}
-          />
+            name="dlugosc"
+            />
         </label>
       </section>
-      <br />
-      <p>
-        Masa arkusza:{" "}
-        <span style={{ color: "red", fontSize: "20px" }}>{totalWeight}</span>{" "}
-        kg/arkusz
-      </p>
     </div>
   );
 };

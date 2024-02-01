@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const ProfilZamknietyKwadratowy = () => {
+const ProfilZamknietyKwadratowy = ({ density, onWeightChange }) => {
   const [width, setWidth] = useState("");
   const [thickness, setThickness] = useState("");
   const [length, setLength] = useState("");
@@ -9,61 +9,63 @@ const ProfilZamknietyKwadratowy = () => {
 
   useEffect(() => {
     calculateWeight();
-  }, [width / 1000, thickness / 1000, length]);
+  }, [width / 1000, thickness / 1000, length, density]);
 
   const calculateWeight = () => {
     const outerVolume = Math.pow(width / 1000, 2) * 1000;
     const innerVolume = Math.pow((width - 2 * thickness) / 1000, 2) * 1000;
     const volume = outerVolume - innerVolume;
-    const weightPerMeter = volume * 2.7; // Assuming the density of aluminium is 2.7 g/cm^3
+    const weightPerMeter = volume * density; // Assuming the density of aluminium is density g/cm^3
     const totalWeight = weightPerMeter * length;
 
     setTotalWeight(`${totalWeight.toFixed(3)}`);
     setTotalWeightPerMeter(`${weightPerMeter.toFixed(3)}`);
+    onWeightChange({
+      totalWeight: totalWeight.toFixed(3),
+      totalWeightPerKg: weightPerMeter.toFixed(3),
+    });
   };
 
   return (
-    <div className='obliczenia'> 
+    <div className="obliczenia">
       <section style={{ display: "flex", gap: "50px" }}>
         <label>
-          Szerokość (mm):
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz szerokość profilu (mm)"
+            placeholder="[A] Wpisz szerokość profilu (mm)"
             value={width}
             onChange={(e) => {
               setWidth(e.target.value);
             }}
+            name="szerokosc"
           />
         </label>
-        <br />
         <label>
-          Grubość ścianki (mm):
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz grubość ścianki profilu (mm)"
+            placeholder="[B] Wpisz grubość ścianki (mm)"
             value={thickness}
             onChange={(e) => {
               setThickness(e.target.value);
             }}
+            name="grubosc"
           />
         </label>
-        <br />
         <label>
-          Długość profilu(m):
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz długość profilu (m)"
+            placeholder="[C] Wpisz długość profilu (m)"
             value={length}
             onChange={(e) => {
               setLength(e.target.value);
             }}
+            name="dlugosc"
           />
         </label>
       </section>
-      <br />
-      <p>Masa na metr profilu: <span style={{color: 'red', fontSize:'20px',}}>{totalWeightPerMeter}</span> kg/m</p>
-      <p>Całkowita masa profilu: <span style={{color: 'red', fontSize:'20px',}}>{totalWeight}</span> kg</p>
     </div>
   );
 };

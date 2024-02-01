@@ -1,0 +1,155 @@
+[
+  {
+    "Oznaczenie": "IPN 80",
+    "wysokosc": 80,
+    "szerokosc": 42,
+    "grubosc": 3.9,
+    "scianka": 5.9,
+    "laczenie": 3.9,
+    "waga": 5.94
+  },
+  {
+    "Oznaczenie": "IPN 100",
+    "wysokosc": 100,
+    "szerokosc": 50,
+    "grubosc": 4.5,
+    "scianka": 6.8,
+    "laczenie": 4.5,
+    "waga": 8.34
+  },
+  {
+    "Oznaczenie": "IPN 120",
+    "wysokosc": 120,
+    "szerokosc": 58,
+    "grubosc": 5.1,
+    "scianka": 7.7,
+    "laczenie": 5.1,
+    "waga": 11.1
+  },
+  {
+    "Oznaczenie": "IPN 140",
+    "wysokosc": 140,
+    "szerokosc": 66,
+    "grubosc": 5.7,
+    "scianka": 8.6,
+    "laczenie": 5.7,
+    "waga": 14.3
+  },
+  {
+    "Oznaczenie": "IPN 160",
+    "wysokosc": 160,
+    "szerokosc": 74,
+    "grubosc": 6.3,
+    "scianka": 9.5,
+    "laczenie": 6.3,
+    "waga": 17.9
+  },
+  {
+    "Oznaczenie": "IPN 180",
+    "wysokosc": 180,
+    "szerokosc": 82,
+    "grubosc": 6.9,
+    "scianka": 10.4,
+    "laczenie": 6.9,
+    "waga": 21.9
+  },
+  {
+    "Oznaczenie": "IPN 200",
+    "wysokosc": 200,
+    "szerokosc": 90,
+    "grubosc": 7.5,
+    "scianka": 11.3,
+    "laczenie": 7.5,
+    "waga": 26.2
+  },
+  {
+    "Oznaczenie": "IPN 220",
+    "wysokosc": 220,
+    "szerokosc": 98,
+    "grubosc": 8.1,
+    "scianka": 12.2,
+    "laczenie": 8.1,
+    "waga": 31.1
+  },
+  {
+    "Oznaczenie": "IPN 240",
+    "wysokosc": 240,
+    "szerokosc": 106,
+    "grubosc": 8.7,
+    "scianka": 13.1,
+    "laczenie": 8.7,
+    "waga": 36.2
+  },
+  {
+    "Oznaczenie": "IPN 260",
+    "wysokosc": 260,
+    "szerokosc": 113,
+    "grubosc": 9.4,
+    "scianka": 14.1,
+    "laczenie": 9.4,
+    "waga": 41.9
+  },
+  {
+    "Oznaczenie": "IPN 300",
+    "wysokosc": 300,
+    "szerokosc": 125,
+    "grubosc": 10.8,
+    "scianka": 16.2,
+    "laczenie": 10.8,
+    "waga": 54.2
+  },
+  {
+    "Oznaczenie": "IPN 340",
+    "wysokosc": 340,
+    "szerokosc": 137,
+    "grubosc": 12.2,
+    "scianka": 18.3,
+    "laczenie": 12.2,
+    "waga": 68
+  },
+  {
+    "Oznaczenie": "IPN 360",
+    "wysokosc": 360,
+    "szerokosc": 143,
+    "grubosc": 13,
+    "scianka": 19.5,
+    "laczenie": 13,
+    "waga": 76.1
+  },
+  {
+    "Oznaczenie": "IPN 400",
+    "wysokosc": 400,
+    "szerokosc": 155,
+    "grubosc": 14.4,
+    "scianka": 21.6,
+    "laczenie": 14.4,
+    "waga": 92.4
+  },
+  {
+    "Oznaczenie": "IPN 450",
+    "wysokosc": 450,
+    "szerokosc": 170,
+    "grubosc": 16.2,
+    "scianka": 24.3,
+    "laczenie": 16.2,
+    "waga": 115
+  },
+  {
+    "Oznaczenie": "IPN 500",
+    "wysokosc": 500,
+    "szerokosc": 185,
+    "grubosc": 18,
+    "scianka": 27,
+    "laczenie": 18,
+    "waga": 141
+  },
+  {
+    "Oznaczenie": "IPN 550",
+    "wysokosc": 550,
+    "szerokosc": 200,
+    "grubosc": 19,
+    "scianka": 30,
+    "laczenie": 19,
+    "waga": 166
+  }
+]

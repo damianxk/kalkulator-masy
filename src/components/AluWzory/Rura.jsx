@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Rura = () => {
+const Rura = ({ density, onWeightChange }) => {
   const [diameter, setDiameter] = useState("");
   const [thickness, setThickness] = useState("");
   const [length, setLength] = useState("");
@@ -9,61 +9,72 @@ const Rura = () => {
 
   useEffect(() => {
     calculateWeight();
-  }, [diameter / 100, thickness / 100, length]);
+  }, [diameter / 100, thickness / 100, length, density]);
 
   const calculateWeight = () => {
     const outerRadius = diameter / 2; // cm
     const innerRadius = outerRadius - thickness; // cm
-    const volume = Math.PI * (Math.pow(outerRadius, 2) - Math.pow(innerRadius, 2)) * length * 100; // cm^3
-    const weight = volume * 2.7 / 100000; // kg
-    const weightPerMeter = Math.PI * (Math.pow(outerRadius, 2) - Math.pow(innerRadius, 2)) * 100 * 2.7 / 100000; // kg/m
+    const volume =
+      Math.PI *
+      (Math.pow(outerRadius, 2) - Math.pow(innerRadius, 2)) *
+      length *
+      100; // cm^3
+    const weight = (volume * density) / 100000; // kg
+    const weightPerMeter =
+      (Math.PI *
+        (Math.pow(outerRadius, 2) - Math.pow(innerRadius, 2)) *
+        100 *
+        density) /
+      100000; // kg/m
 
     setTotalWeight(`${weight.toFixed(3)}`);
     setTotalWeightPerMeter(`${weightPerMeter.toFixed(3)}`);
+    onWeightChange({
+      totalWeight: weight.toFixed(3),
+      totalWeightPerKg: weightPerMeter.toFixed(3),
+    });
   };
 
   return (
-    <div className='obliczenia'> 
+    <div className="obliczenia">
       <section style={{ display: "flex", gap: "50px" }}>
         <label>
-          Średnica (mm):
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz średnicę (mm)"
+            placeholder="[A] Wpisz średnicę (mm)"
             value={diameter}
             onChange={(e) => {
               setDiameter(e.target.value);
             }}
+            name="srednica"
           />
         </label>
-        <br />
         <label>
-          Grubość ścianki (mm):
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz grubość ścianki (mm)"
+            placeholder="[B] Wpisz grubość ścianki (mm)"
             value={thickness}
             onChange={(e) => {
               setThickness(e.target.value);
             }}
+            name="grubosc"
           />
         </label>
-        <br />
         <label>
-          Długość rury (m):
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz długość rury (m)"
+            placeholder="[C] Wpisz długość rury (m)"
             value={length}
             onChange={(e) => {
               setLength(e.target.value);
             }}
+            name="dlugosc"
           />
         </label>
       </section>
-      <br />
-      <p>Masa na metr rury: <span style={{color: 'red', fontSize:'20px',}}>{totalWeightPerMeter}</span> kg/m</p>
-      <p>Całkowita masa rury: <span style={{color: 'red', fontSize:'20px',}}>{totalWeight}</span> kg</p>
     </div>
   );
 };

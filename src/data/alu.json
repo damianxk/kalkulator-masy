@@ -1,43 +1,88 @@
 [
-    {
-      "id": 2,
-      "name": "Pręty kwadratowe",
-      "image": "/svg/pret-kwadratowy.svg"
-    },
-    {
-      "id": 6,
-      "name": "Profile zamknięte kwadratowe",
-      "image": "/svg/profil-kwadratowy.svg"
-    },
-    {
-      "id": 7,
-      "name": "Profile zamknięte",
-      "image": "/svg/profil-prostokątny.svg"
-    },
-    {
-      "id": 8,
-      "name": "Kątowniki równoramienne",
-      "image": "/svg/katownik-1.svg"
-    },
-    {
-      "id": 9,
-      "name": "Kątowniki",
-      "image": "/svg/katownik-2.svg"
-    },
-    {
-      "id": 10,
-      "name": "Ceowniki",
-      "image": "/svg/ceownik.svg"
-    },
-    {
-      "id": 11,
-      "name": "Blachy",
-      "image": "/svg/blacha.svg"
-    },
-    {
-      "id": 12,
-      "name": "Dwuteowniki",
-      "image": "/svg/dwuteownik.svg"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "name": "Profile kwadratowe",
+    "image": "/svg/profil-kwadratowy.svg",
+    "image2": "/svg/profil-kwadratowy-czerwony.svg",
+    "render": "3d/profil-zamkniety-kwadratowy.webp"
+  },
+  {
+    "id": 2,
+    "name": "Profile prostokątne",
+    "image": "/svg/profil-prostokątny.svg",
+    "image2": "/svg/profil-prostokątny-czerwony.svg",
+    "render": "3d/profil-zamkniety-prostokatny.webp"
+  },
+
+  {
+    "id": 3,
+    "name": "Rury okrągłe",
+    "image": "/svg/rura-okragla.svg",
+    "image2": "/svg/rura-okragla-czerwony.svg",
+    "render": "3d/rura-okragla.webp"
+  },
+  {
+    "id": 4,
+    "name": "Kątowniki równoramienne",
+    "image": "/svg/katownik-2.svg",
+    "image2": "/svg/katownik-2-czerwony.svg",
+    "render": "3d/katownik-rownoramienny.webp"
+  },
+  {
+    "id": 5,
+    "name": "Kątowniki",
+    "image": "/svg/katownik-1.svg",
+    "image2": "/svg/katownik-1-czerwony.svg",
+    "render": "3d/katownik.webp"
+  },
+  {
+    "id": 6,
+    "name": "Ceowniki",
+    "image": "/svg/ceownik.svg",
+    "image2": "/svg/ceownik-czerwony.svg",
+    "render": "3d/ceownik.webp"
+  },
+  {
+    "id": 7,
+    "name": "Blachy",
+    "image": "/svg/blacha.svg",
+    "image2": "/svg/blacha-czerwony.svg",
+    "render": "3d/blacha.webp"
+  },
+  {
+    "id": 8,
+    "name": "Dwuteowniki",
+    "image": "/svg/dwuteownik.svg",
+    "image2": "/svg/dwuteownik-czerwony.svg",
+    "render": "3d/dwuteownik.webp"
+  },
+  {
+    "id": 9,
+    "name": "Pręty kwadratowe",
+    "image": "/svg/pret-kwadratowy.svg",
+    "image2": "/svg/pret-kwadratowy-czerwony.svg",
+    "render": "/3d/pret-kwadratowy.webp"
+  },
+
+  {
+    "id": 10,
+    "name": "Pręty okrągłe",
+    "image": "/svg/pret-okragly.svg",
+    "image2": "/svg/pret-okragly-czerwony.svg",
+    "render": "/3d/pret-okragly.webp"
+  },
+  {
+    "id": 11,
+    "name": "Pręty sześciokątne",
+    "image": "/svg/pret-szesciokatny.svg",
+    "image2": "/svg/pret-szesciokatny-czerwony.svg",
+    "render": "/3d/pret-szesciokatny.webp"
+  },
+  {
+    "id": 12,
+    "name": "Płaskowniki",
+    "image": "/svg/plaskownik.svg",
+    "image2": "/svg/plaskownik-czerwony.svg",
+    "render": "3d/plaskownik.webp"
+  }
+]

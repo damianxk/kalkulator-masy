@@ -1,0 +1,542 @@
+[
+  {
+    "Oznaczenie": "HE 100 A",
+    "wysokosc": 96,
+    "szerokosc": 100,
+    "grubosc": 5,
+    "scianka": 8,
+    "laczenie": 12,
+    "waga": 16.7
+  },
+  {
+    "Oznaczenie": "HE 100 B",
+    "wysokosc": 100,
+    "szerokosc": 100,
+    "grubosc": 6,
+    "scianka": 10,
+    "laczenie": 12,
+    "waga": 20.4
+  },
+  {
+    "Oznaczenie": "HE 100 C",
+    "wysokosc": 110,
+    "szerokosc": 103,
+    "grubosc": 9,
+    "scianka": 15,
+    "laczenie": 12,
+    "waga": 30.9
+  },
+  {
+    "Oznaczenie": "HE 100 M",
+    "wysokosc": 120,
+    "szerokosc": 106,
+    "grubosc": 12,
+    "scianka": 20,
+    "laczenie": 12,
+    "waga": 41.8
+  },
+  {
+    "Oznaczenie": "HE 100 AA",
+    "wysokosc": 91,
+    "szerokosc": 100,
+    "grubosc": 4.2,
+    "scianka": 5.5,
+    "laczenie": 12,
+    "waga": 12.2
+  },
+  {
+    "Oznaczenie": "HE 120 A",
+    "wysokosc": 114,
+    "szerokosc": 120,
+    "grubosc": 5,
+    "scianka": 8,
+    "laczenie": 12,
+    "waga": 19.9
+  },
+  {
+    "Oznaczenie": "HE 120 B",
+    "wysokosc": 120,
+    "szerokosc": 120,
+    "grubosc": 6.5,
+    "scianka": 11,
+    "laczenie": 12,
+    "waga": 26.7
+  },
+  {
+    "Oznaczenie": "HE 120 C",
+    "wysokosc": 130,
+    "szerokosc": 123,
+    "grubosc": 9.5,
+    "scianka": 18,
+    "laczenie": 12,
+    "waga": 39.2
+  },
+  {
+    "Oznaczenie": "HE 120 M",
+    "wysokosc": 140,
+    "szerokosc": 126,
+    "grubosc": 12.5,
+    "scianka": 21,
+    "laczenie": 12,
+    "waga": 52.1
+  },
+  {
+    "Oznaczenie": "HE 120 AA",
+    "wysokosc": 109,
+    "szerokosc": 120,
+    "grubosc": 4.2,
+    "scianka": 5.5,
+    "laczenie": 12,
+    "waga": 14.6
+  },
+  {
+    "Oznaczenie": "HE 140 A",
+    "wysokosc": 133,
+    "szerokosc": 140,
+    "grubosc": 5.5,
+    "scianka": 8.5,
+    "laczenie": 12,
+    "waga": 24.7
+  },
+  {
+    "Oznaczenie": "HE 140 B",
+    "wysokosc": 140,
+    "szerokosc": 140,
+    "grubosc": 7,
+    "scianka": 12,
+    "laczenie": 12,
+    "waga": 33.7
+  },
+  {
+    "Oznaczenie": "HE 140 C",
+    "wysokosc": 150,
+    "szerokosc": 143,
+    "grubosc": 10,
+    "scianka": 17,
+    "laczenie": 12,
+    "waga": 48.2
+  },
+  {
+    "Oznaczenie": "HE 140 M",
+    "wysokosc": 160,
+    "szerokosc": 146,
+    "grubosc": 13,
+    "scianka": 22,
+    "laczenie": 12,
+    "waga": 63.2
+  },
+  {
+    "Oznaczenie": "HE 140 AA",
+    "wysokosc": 128,
+    "szerokosc": 140,
+    "grubosc": 4.3,
+    "scianka": 6,
+    "laczenie": 12,
+    "waga": 18.1
+  },
+  {
+    "Oznaczenie": "HE 160 A",
+    "wysokosc": 152,
+    "szerokosc": 160,
+    "grubosc": 6,
+    "scianka": 9,
+    "laczenie": 15,
+    "waga": 30.4
+  },
+  {
+    "Oznaczenie": "HE 160 B",
+    "wysokosc": 160,
+    "szerokosc": 160,
+    "grubosc": 8,
+    "scianka": 13,
+    "laczenie": 15,
+    "waga": 42.6
+  },
+  {
+    "Oznaczenie": "HE 160 C",
+    "wysokosc": 170,
+    "szerokosc": 163,
+    "grubosc": 11,
+    "scianka": 18,
+    "laczenie": 15,
+    "waga": 59.2
+  },
+  {
+    "Oznaczenie": "HE 160 M",
+    "wysokosc": 180,
+    "szerokosc": 166,
+    "grubosc": 14,
+    "scianka": 23,
+    "laczenie": 15,
+    "waga": 76.2
+  },
+  {
+    "Oznaczenie": "HE 160 AA",
+    "wysokosc": 148,
+    "szerokosc": 160,
+    "grubosc": 4.5,
+    "scianka": 7,
+    "laczenie": 15,
+    "waga": 23.8
+  },
+  {
+    "Oznaczenie": "HE 180 A",
+    "wysokosc": 171,
+    "szerokosc": 180,
+    "grubosc": 6,
+    "scianka": 9.5,
+    "laczenie": 15,
+    "waga": 35.5
+  },
+  {
+    "Oznaczenie": "HE 180 B",
+    "wysokosc": 180,
+    "szerokosc": 180,
+    "grubosc": 8.5,
+    "scianka": 14,
+    "laczenie": 15,
+    "waga": 51.2
+  },
+  {
+    "Oznaczenie": "HE 180 C",
+    "wysokosc": 190,
+    "szerokosc": 183,
+    "grubosc": 11.5,
+    "scianka": 19,
+    "laczenie": 15,
+    "waga": 69.8
+  },
+  {
+    "Oznaczenie": "HE 180 M",
+    "wysokosc": 200,
+    "szerokosc": 186,
+    "grubosc": 14.5,
+    "scianka": 24,
+    "laczenie": 15,
+    "waga": 88.9
+  },
+  {
+    "Oznaczenie": "HE 180 AA",
+    "wysokosc": 167,
+    "szerokosc": 180,
+    "grubosc": 5,
+    "scianka": 7.5,
+    "laczenie": 15,
+    "waga": 28.7
+  },
+  {
+    "Oznaczenie": "HE 200 A",
+    "wysokosc": 190,
+    "szerokosc": 200,
+    "grubosc": 6.5,
+    "scianka": 10,
+    "laczenie": 18,
+    "waga": 42.3
+  },
+  {
+    "Oznaczenie": "HE 200 B",
+    "wysokosc": 200,
+    "szerokosc": 200,
+    "grubosc": 9,
+    "scianka": 15,
+    "laczenie": 18,
+    "waga": 61.3
+  },
+  {
+    "Oznaczenie": "HE 200 C",
+    "wysokosc": 210,
+    "szerokosc": 203,
+    "grubosc": 12,
+    "scianka": 20,
+    "laczenie": 18,
+    "waga": 81.9
+  },
+  {
+    "Oznaczenie": "HE 200 M",
+    "wysokosc": 220,
+    "szerokosc": 206,
+    "grubosc": 15,
+    "scianka": 25,
+    "laczenie": 18,
+    "waga": 103
+  },
+  {
+    "Oznaczenie": "HE 200 AA",
+    "wysokosc": 186,
+    "szerokosc": 200,
+    "grubosc": 5.5,
+    "scianka": 8,
+    "laczenie": 18,
+    "waga": 34.6
+  },
+  {
+    "Oznaczenie": "HE 220 A",
+    "wysokosc": 210,
+    "szerokosc": 220,
+    "grubosc": 7,
+    "scianka": 11,
+    "laczenie": 18,
+    "waga": 50.5
+  },
+  {
+    "Oznaczenie": "HE 220 B",
+    "wysokosc": 220,
+    "szerokosc": 220,
+    "grubosc": 9.5,
+    "scianka": 16,
+    "laczenie": 18,
+    "waga": 71.5
+  },
+  {
+    "Oznaczenie": "HE 220 C",
+    "wysokosc": 230,
+    "szerokosc": 223,
+    "grubosc": 12.5,
+    "scianka": 21,
+    "laczenie": 18,
+    "waga": 94.1
+  },
+  {
+    "Oznaczenie": "HE 220 M",
+    "wysokosc": 240,
+    "szerokosc": 226,
+    "grubosc": 15.5,
+    "scianka": 26,
+    "laczenie": 18,
+    "waga": 117
+  },
+  {
+    "Oznaczenie": "HE 220 AA",
+    "wysokosc": 205,
+    "szerokosc": 220,
+    "grubosc": 6,
+    "scianka": 8.5,
+    "laczenie": 18,
+    "waga": 40.4
+  },
+  {
+    "Oznaczenie": "HE 240 A",
+    "wysokosc": 230,
+    "szerokosc": 240,
+    "grubosc": 7.5,
+    "scianka": 12,
+    "laczenie": 21,
+    "waga": 60.3
+  },
+  {
+    "Oznaczenie": "HE 240 B",
+    "wysokosc": 240,
+    "szerokosc": 240,
+    "grubosc": 10,
+    "scianka": 17,
+    "laczenie": 21,
+    "waga": 83.2
+  },
+  {
+    "Oznaczenie": "HE 240 C",
+    "wysokosc": 255,
+    "szerokosc": 244,
+    "grubosc": 14,
+    "scianka": 24.5,
+    "laczenie": 21,
+    "waga": 119.5
+  },
+  {
+    "Oznaczenie": "HE 240 M",
+    "wysokosc": 270,
+    "szerokosc": 248,
+    "grubosc": 18,
+    "scianka": 32,
+    "laczenie": 21,
+    "waga": 157
+  },
+  {
+    "Oznaczenie": "HE 240 AA",
+    "wysokosc": 224,
+    "szerokosc": 240,
+    "grubosc": 6.5,
+    "scianka": 9,
+    "laczenie": 21,
+    "waga": 47.4
+  },
+  {
+    "Oznaczenie": "HE 260 A",
+    "wysokosc": 250,
+    "szerokosc": 260,
+    "grubosc": 7.5,
+    "scianka": 12.5,
+    "laczenie": 24,
+    "waga": 68.2
+  },
+  {
+    "Oznaczenie": "HE 260 B",
+    "wysokosc": 260,
+    "szerokosc": 260,
+    "grubosc": 10,
+    "scianka": 17.5,
+    "laczenie": 24,
+    "waga": 93
+  },
+  {
+    "Oznaczenie": "HE 260 C",
+    "wysokosc": 275,
+    "szerokosc": 264,
+    "grubosc": 14,
+    "scianka": 25,
+    "laczenie": 24,
+    "waga": 132.2
+  },
+  {
+    "Oznaczenie": "HE 260 M",
+    "wysokosc": 290,
+    "szerokosc": 268,
+    "grubosc": 18,
+    "scianka": 32.5,
+    "laczenie": 24,
+    "waga": 172
+  },
+  {
+    "Oznaczenie": "HE 260 AA",
+    "wysokosc": 244,
+    "szerokosc": 260,
+    "grubosc": 6.5,
+    "scianka": 9.5,
+    "laczenie": 24,
+    "waga": 54.1
+  },
+  {
+    "Oznaczenie": "HE 280 A",
+    "wysokosc": 270,
+    "szerokosc": 280,
+    "grubosc": 8,
+    "scianka": 13,
+    "laczenie": 24,
+    "waga": 76.4
+  },
+  {
+    "Oznaczenie": "HE 280 B",
+    "wysokosc": 280,
+    "szerokosc": 280,
+    "grubosc": 10.5,
+    "scianka": 18,
+    "laczenie": 24,
+    "waga": 103
+  },
+  {
+    "Oznaczenie": "HE 280 C",
+    "wysokosc": 295,
+    "szerokosc": 284,
+    "grubosc": 14.5,
+    "scianka": 25.5,
+    "laczenie": 24,
+    "waga": 145.3
+  },
+  {
+    "Oznaczenie": "HE 280 M",
+    "wysokosc": 310,
+    "szerokosc": 288,
+    "grubosc": 18.5,
+    "scianka": 33,
+    "laczenie": 24,
+    "waga": 189
+  },
+  {
+    "Oznaczenie": "HE 280 AA",
+    "wysokosc": 264,
+    "szerokosc": 280,
+    "grubosc": 7,
+    "scianka": 10,
+    "laczenie": 24,
+    "waga": 61.2
+  },
+  {
+    "Oznaczenie": "HE 300 A",
+    "wysokosc": 290,
+    "szerokosc": 300,
+    "grubosc": 8.5,
+    "scianka": 14,
+    "laczenie": 27,
+    "waga": 88.3
+  },
+  {
+    "Oznaczenie": "HE 300 B",
+    "wysokosc": 300,
+    "szerokosc": 300,
+    "grubosc": 11,
+    "scianka": 19,
+    "laczenie": 27,
+    "waga": 117
+  },
+  {
+    "Oznaczenie": "HE 300 C",
+    "wysokosc": 320,
+    "szerokosc": 305,
+    "grubosc": 16,
+    "scianka": 29,
+    "laczenie": 27,
+    "waga": 177
+  },
+  {
+    "Oznaczenie": "HE 300 M",
+    "wysokosc": 340,
+    "szerokosc": 310,
+    "grubosc": 21,
+    "scianka": 39,
+    "laczenie": 27,
+    "waga": 238
+  },
+  {
+    "Oznaczenie": "HE 300 AA",
+    "wysokosc": 283,
+    "szerokosc": 300,
+    "grubosc": 7.5,
+    "scianka": 10.5,
+    "laczenie": 27,
+    "waga": 69.8
+  },
+  {
+    "Oznaczenie": "HE 320 A",
+    "wysokosc": 310,
+    "szerokosc": 300,
+    "grubosc": 9,
+    "scianka": 15.5,
+    "laczenie": 27,
+    "waga": 97.6
+  },
+  {
+    "Oznaczenie": "HE 320 B",
+    "wysokosc": 320,
+    "szerokosc": 300,
+    "grubosc": 11.5,
+    "scianka": 20.5,
+    "laczenie": 27,
+    "waga": 127
+  },
+  {
+    "Oznaczenie": "HE 320 C",
+    "wysokosc": 340,
+    "szerokosc": 305,
+    "grubosc": 16,
+    "scianka": 30.5,
+    "laczenie": 27,
+    "waga": 186
+  },
+  {
+    "Oznaczenie": "HE 320 M",
+    "wysokosc": 359,
+    "szerokosc": 309,
+    "grubosc": 21,
+    "scianka": 40,
+    "laczenie": 27,
+    "waga": 245
+  },
+  {
+    "Oznaczenie": "HE 320 AA",
+    "wysokosc": 301,
+    "szerokosc": 300,
+    "grubosc": 8,
+    "scianka": 11,
+    "laczenie": 27,
+    "waga": 74.2
+  }
+]

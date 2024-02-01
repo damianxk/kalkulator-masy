@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const PretOkraglyAlu = () => {
+const PretOkraglyAlu = ({  density, onWeightChange  }) => {
   const [diameter, setDiameter] = useState("");
   const [length, setLength] = useState("");
   const [weightPerMeter, setWeightPerMeter] = useState(0);
@@ -8,47 +8,51 @@ const PretOkraglyAlu = () => {
 
   useEffect(() => {
     calculateWeight();
-  }, [diameter, length]);
+  }, [diameter, length, density]);
 
   const calculateWeight = () => {
     const radius = diameter / 2; // przeliczam średnicę na promień
-    const volume = Math.PI * Math.pow(radius, 2) * length * 100 * 2.7; // Masa
+    const volume = Math.PI * Math.pow(radius, 2) * length * 100 * density; // Masa
     const volumeKg = volume / 100000;
-    const volumeMeter = (Math.PI * Math.pow(radius, 2) * 1 * 2.7) / 1000;
+    const volumeMeter = (Math.PI * Math.pow(radius, 2) * 1 * density) / 1000;
 
     setWeightPerMeter(` ${volumeMeter.toFixed(3)}`);
     setTotalWeight(` ${volumeKg.toFixed(3)}`);
+    onWeightChange({
+      totalWeight: volumeKg.toFixed(3),
+      totalWeightPerKg: volumeMeter.toFixed(3),
+    });
   };
 
   return (
     <div className="obliczenia">
-      <section style={{display:'flex', gap:'50px',}}>
+      <section style={{ display: "flex", gap: "50px" }}>
         <label>
-          Średnica pręta (mm):
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz średnicę pręta (mm)"
+            placeholder="[A] Wpisz średnicę pręta (mm)"
             value={diameter}
             onChange={(e) => {
               setDiameter(e.target.value);
             }}
+            name="srednica"
           />
         </label>
         <label>
-          Długość pręta (m):
           <input
+            inputMode="decimal"
             type="number"
-            placeholder="wpisz długość pręta (m)"
+            placeholder="[B] Wpisz długość pręta (m)"
             value={length}
             onChange={(e) => {
               setLength(e.target.value);
             }}
+            name="dlugosc"
           />
         </label>
       </section>
-      <br />
-      <p>Waga na metr pręta: <span style={{color: 'red', fontSize:'20px',}}>{weightPerMeter}</span> kg/m</p>
-      <p>Całkowita waga pręta: <span style={{color: 'red', fontSize:'20px',}}>{totalWeight}</span> kg</p>
+
     </div>
   );
 };

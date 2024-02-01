@@ -1,18 +1,9 @@
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 import AluList from "../../components/AluList/AluList";
 import items from "../../data/alu.json";
-import { Link, useLocation } from "react-router-dom";
 
-const Aluminium = () => {
-  const location = useLocation();
+const Aluminium = ({activeComponent, density, setDensity}) => {
   return (
-    <>
-      <main>
-        <AluList items={items} />
-      </main>
-      <Footer />
-    </>
+        <AluList items={items} activeComponent={activeComponent} density={density} setDensity={setDensity} />
   );
 };
 export default Aluminium;

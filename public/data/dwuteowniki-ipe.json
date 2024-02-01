@@ -1,0 +1,318 @@
+[
+  {
+    "Oznaczenie": "IPE 80",
+    "wysokosc": 80,
+    "szerokosc": 46,
+    "grubosc": 3.8,
+    "scianka": 5.2,
+    "laczenie": 5,
+    "waga": 6
+  },
+  {
+    "Oznaczenie": "IPE 100",
+    "wysokosc": 100,
+    "szerokosc": 55,
+    "grubosc": 4.1,
+    "scianka": 5.7,
+    "laczenie": 7,
+    "waga": 8.1
+  },
+  {
+    "Oznaczenie": "IPE 120",
+    "wysokosc": 120,
+    "szerokosc": 64,
+    "grubosc": 4.4,
+    "scianka": 6.3,
+    "laczenie": 7,
+    "waga": 10.4
+  },
+  {
+    "Oznaczenie": "IPE 140",
+    "wysokosc": 140,
+    "szerokosc": 73,
+    "grubosc": 4.7,
+    "scianka": 6.9,
+    "laczenie": 7,
+    "waga": 12.9
+  },
+  {
+    "Oznaczenie": "IPE 160",
+    "wysokosc": 160,
+    "szerokosc": 82,
+    "grubosc": 5,
+    "scianka": 7.4,
+    "laczenie": 9,
+    "waga": 15.8
+  },
+  {
+    "Oznaczenie": "IPE 180",
+    "wysokosc": 180,
+    "szerokosc": 91,
+    "grubosc": 5.3,
+    "scianka": 8,
+    "laczenie": 9,
+    "waga": 18.8
+  },
+  {
+    "Oznaczenie": "IPE 200",
+    "wysokosc": 200,
+    "szerokosc": 100,
+    "grubosc": 5.6,
+    "scianka": 8.5,
+    "laczenie": 12,
+    "waga": 22.4
+  },
+  {
+    "Oznaczenie": "IPE 220",
+    "wysokosc": 220,
+    "szerokosc": 110,
+    "grubosc": 5.9,
+    "scianka": 9.2,
+    "laczenie": 12,
+    "waga": 26.2
+  },
+  {
+    "Oznaczenie": "IPE 240",
+    "wysokosc": 240,
+    "szerokosc": 120,
+    "grubosc": 6.2,
+    "scianka": 9.8,
+    "laczenie": 15,
+    "waga": 30.7
+  },
+  {
+    "Oznaczenie": "IPE 270",
+    "wysokosc": 270,
+    "szerokosc": 135,
+    "grubosc": 6.6,
+    "scianka": 10.2,
+    "laczenie": 15,
+    "waga": 36.1
+  },
+  {
+    "Oznaczenie": "IPE 300",
+    "wysokosc": 300,
+    "szerokosc": 150,
+    "grubosc": 7.1,
+    "scianka": 10.7,
+    "laczenie": 15,
+    "waga": 42.2
+  },
+  {
+    "Oznaczenie": "IPE 330",
+    "wysokosc": 330,
+    "szerokosc": 160,
+    "grubosc": 7.5,
+    "scianka": 11.5,
+    "laczenie": 18,
+    "waga": 49.1
+  },
+  {
+    "Oznaczenie": "IPE 360",
+    "wysokosc": 360,
+    "szerokosc": 170,
+    "grubosc": 8,
+    "scianka": 12.7,
+    "laczenie": 18,
+    "waga": 57.1
+  },
+  {
+    "Oznaczenie": "IPE 400",
+    "wysokosc": 400,
+    "szerokosc": 180,
+    "grubosc": 8.6,
+    "scianka": 13.5,
+    "laczenie": 21,
+    "waga": 66.3
+  },
+  {
+    "Oznaczenie": "IPE 450",
+    "wysokosc": 450,
+    "szerokosc": 190,
+    "grubosc": 9.4,
+    "scianka": 14.6,
+    "laczenie": 21,
+    "waga": 77.6
+  },
+  {
+    "Oznaczenie": "IPE 500",
+    "wysokosc": 500,
+    "szerokosc": 200,
+    "grubosc": 10.2,
+    "scianka": 16,
+    "laczenie": 21,
+    "waga": 90.7
+  },
+  {
+    "Oznaczenie": "IPE 550",
+    "wysokosc": 550,
+    "szerokosc": 210,
+    "grubosc": 11.1,
+    "scianka": 17.2,
+    "laczenie": 24,
+    "waga": 106
+  },
+  {
+    "Oznaczenie": "IPE 600",
+    "wysokosc": 600,
+    "szerokosc": 220,
+    "grubosc": 12,
+    "scianka": 19,
+    "laczenie": 24,
+    "waga": 122
+  },
+
+  {
+    "Oznaczenie": "IPE 80AA",
+    "wysokosc": 78,
+    "szerokosc": 46,
+    "grubosc": 3.2,
+    "scianka": 4.2,
+    "laczenie": 5,
+    "waga": 4.95
+  },
+  {
+    "Oznaczenie": "IPE 100AA",
+    "wysokosc": 97.6,
+    "szerokosc": 55,
+    "grubosc": 3.6,
+    "scianka": 4.5,
+    "laczenie": 7,
+    "waga": 6.72
+  },
+  {
+    "Oznaczenie": "IPE 120AA",
+    "wysokosc": 117,
+    "szerokosc": 64,
+    "grubosc": 3.8,
+    "scianka": 4.8,
+    "laczenie": 7,
+    "waga": 8.36
+  },
+  {
+    "Oznaczenie": "IPE 140AA",
+    "wysokosc": 136.6,
+    "szerokosc": 73,
+    "grubosc": 3.8,
+    "scianka": 5.2,
+    "laczenie": 7,
+    "waga": 10.05
+  },
+  {
+    "Oznaczenie": "IPE 160AA",
+    "wysokosc": 156.4,
+    "szerokosc": 82,
+    "grubosc": 4,
+    "scianka": 5.6,
+    "laczenie": 9,
+    "waga": 12.31
+  },
+  {
+    "Oznaczenie": "IPE 180AA",
+    "wysokosc": 176.4,
+    "szerokosc": 91,
+    "grubosc": 4.3,
+    "scianka": 6.2,
+    "laczenie": 9,
+    "waga": 14.94
+  },
+  {
+    "Oznaczenie": "IPE 200AA",
+    "wysokosc": 196.4,
+    "szerokosc": 100,
+    "grubosc": 4.5,
+    "scianka": 6.7,
+    "laczenie": 12,
+    "waga": 17.95
+  },
+  {
+    "Oznaczenie": "IPE 220AA",
+    "wysokosc": 216.4,
+    "szerokosc": 110,
+    "grubosc": 4.7,
+    "scianka": 7.4,
+    "laczenie": 12,
+    "waga": 21.19
+  },
+  {
+    "Oznaczenie": "IPE 240AA",
+    "wysokosc": 236.4,
+    "szerokosc": 120,
+    "grubosc": 4.8,
+    "scianka": 8,
+    "laczenie": 15,
+    "waga": 24.89
+  },
+  {
+    "Oznaczenie": "IPE 270AA",
+    "wysokosc": 267,
+    "szerokosc": 135,
+    "grubosc": 5.5,
+    "scianka": 8.7,
+    "laczenie": 15,
+    "waga": 30.73
+  },
+  {
+    "Oznaczenie": "IPE 300AA",
+    "wysokosc": 297,
+    "szerokosc": 150,
+    "grubosc": 6.1,
+    "scianka": 9.2,
+    "laczenie": 15,
+    "waga": 36.52
+  },
+  {
+    "Oznaczenie": "IPE 330AA",
+    "wysokosc": 327,
+    "szerokosc": 160,
+    "grubosc": 6.5,
+    "scianka": 10,
+    "laczenie": 18,
+    "waga": 42.96
+  },
+  {
+    "Oznaczenie": "IPE 360AA",
+    "wysokosc": 357.6,
+    "szerokosc": 170,
+    "grubosc": 6.6,
+    "scianka": 11.5,
+    "laczenie": 18,
+    "waga": 50.21
+  },
+  {
+    "Oznaczenie": "IPE 400AA",
+    "wysokosc": 397,
+    "szerokosc": 180,
+    "grubosc": 7,
+    "scianka": 12,
+    "laczenie": 21,
+    "waga": 57.38
+  },
+  {
+    "Oznaczenie": "IPE 450AA",
+    "wysokosc": 447,
+    "szerokosc": 190,
+    "grubosc": 7.6,
+    "scianka": 13.1,
+    "laczenie": 21,
+    "waga": 67.15
+  },
+  {
+    "Oznaczenie": "IPE 500AA",
+    "wysokosc": 497,
+    "szerokosc": 200,
+    "grubosc": 8.4,
+    "scianka": 14.5,
+    "laczenie": 21,
+    "waga": 79.36
+  },
+  {
+    "Oznaczenie": "IPE 550AA",
+    "wysokosc": 547,
+    "szerokosc": 210,
+    "grubosc": 9,
+    "scianka": 15.7,
+    "laczenie": 24,
+    "waga": 92.07
+  }
+]
