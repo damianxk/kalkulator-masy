@@ -1,30 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const Ceowniki = ({ density, onWeightChange }) => {
   const [x, setX] = useState("");
   const [y, setY] = useState("");
   const [zBox, setZBox] = useState("");
   const [length, setLength] = useState("");
-  const [totalWeight, setTotalWeight] = useState(0);
-  const [totalWeightPerMeter, setTotalWeightPerMeter] = useState(0);
 
-  useEffect(() => {
-    calculateWeight();
-  }, [x / 1000, y / 1000, zBox / 1000, length, density]);
-
-  const calculateWeight = () => {
+  const calculateWeight = useCallback(() => {
     const calculatedWeight =
       ((2 * x * zBox + (y - 2 * zBox) * zBox) * density) / 1000;
     const weight = calculatedWeight;
     const weightPerMeter = weight * length;
 
-    setTotalWeight(`${weight.toFixed(3)}`);
-    setTotalWeightPerMeter(`${weightPerMeter.toFixed(3)}`);
     onWeightChange({
       totalWeight: weight.toFixed(3),
       totalWeightPerKg: weightPerMeter.toFixed(3),
     });
-  };
+  }, [x, y, zBox, length, density, onWeightChange]);
+
+  useEffect(() => {
+    calculateWeight();
+  }, [calculateWeight]);
 
   return (
     <div className="obliczenia">

@@ -1,28 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
-const PretOkraglyAlu = ({  density, onWeightChange  }) => {
+const PretOkraglyAlu = ({ density, onWeightChange }) => {
   const [diameter, setDiameter] = useState("");
   const [length, setLength] = useState("");
-  const [weightPerMeter, setWeightPerMeter] = useState(0);
-  const [totalWeight, setTotalWeight] = useState(0);
 
-  useEffect(() => {
-    calculateWeight();
-  }, [diameter, length, density]);
-
-  const calculateWeight = () => {
+  const calculateWeight = useCallback(() => {
     const radius = diameter / 2; // przeliczam średnicę na promień
     const volume = Math.PI * Math.pow(radius, 2) * length * 100 * density; // Masa
     const volumeKg = volume / 100000;
     const volumeMeter = (Math.PI * Math.pow(radius, 2) * 1 * density) / 1000;
 
-    setWeightPerMeter(` ${volumeMeter.toFixed(3)}`);
-    setTotalWeight(` ${volumeKg.toFixed(3)}`);
     onWeightChange({
       totalWeight: volumeKg.toFixed(3),
       totalWeightPerKg: volumeMeter.toFixed(3),
     });
-  };
+  }, [diameter, length, density, onWeightChange]);
+
+  useEffect(() => {
+    calculateWeight();
+  }, [calculateWeight]);
 
   return (
     <div className="obliczenia">
@@ -52,7 +48,6 @@ const PretOkraglyAlu = ({  density, onWeightChange  }) => {
           />
         </label>
       </section>
-
     </div>
   );
 };

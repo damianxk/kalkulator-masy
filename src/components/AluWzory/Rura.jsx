@@ -1,17 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const Rura = ({ density, onWeightChange }) => {
   const [diameter, setDiameter] = useState("");
   const [thickness, setThickness] = useState("");
   const [length, setLength] = useState("");
-  const [totalWeight, setTotalWeight] = useState(0);
-  const [totalWeightPerMeter, setTotalWeightPerMeter] = useState(0);
 
-  useEffect(() => {
-    calculateWeight();
-  }, [diameter / 100, thickness / 100, length, density]);
-
-  const calculateWeight = () => {
+  const calculateWeight = useCallback(() => {
     const outerRadius = diameter / 2; // cm
     const innerRadius = outerRadius - thickness; // cm
     const volume =
@@ -27,13 +21,15 @@ const Rura = ({ density, onWeightChange }) => {
         density) /
       100000; // kg/m
 
-    setTotalWeight(`${weight.toFixed(3)}`);
-    setTotalWeightPerMeter(`${weightPerMeter.toFixed(3)}`);
     onWeightChange({
       totalWeight: weight.toFixed(3),
       totalWeightPerKg: weightPerMeter.toFixed(3),
     });
-  };
+  }, [diameter, thickness, length, density, onWeightChange]);
+
+  useEffect(() => {
+    calculateWeight();
+  }, [calculateWeight]);
 
   return (
     <div className="obliczenia">

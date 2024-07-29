@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const DwuteownikAlu = ({ onWeightChange }) => {
   const [length, setLength] = useState("");
-  const [totalWeight, setTotalWeight] = useState(0);
-  const [totalWeightPerKg, setTotalWeightPerKg] = useState(0);
   const [type, setType] = useState("");
   const [data, setData] = useState([]);
   const [selectedOption, setSelectedOption] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
 
-  useEffect(() => {
+  const fetchData = useCallback(() => {
     let url;
     switch (type) {
       case "I":
@@ -36,6 +34,10 @@ const DwuteownikAlu = ({ onWeightChange }) => {
   }, [type]);
 
   useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  useEffect(() => {
     if (selectedOption) {
       const item = data.find((item) => item.Oznaczenie === selectedOption);
       setSelectedItem(item);
@@ -44,28 +46,32 @@ const DwuteownikAlu = ({ onWeightChange }) => {
     }
   }, [selectedOption, data]);
 
-  useEffect(() => {
+  const calculateWeight = useCallback(() => {
     if (selectedItem && selectedItem.waga !== null) {
-      setTotalWeight(selectedItem.waga);
-      setTotalWeightPerKg((selectedItem.waga * length).toFixed(3));
       onWeightChange({
         totalWeight: selectedItem.waga.toFixed(3),
         totalWeightPerKg: (selectedItem.waga * length).toFixed(3),
       });
     } else {
-      setTotalWeight(0);
-      setTotalWeightPerKg(0);
       onWeightChange({
         totalWeight: "0.000",
         totalWeightPerKg: "0.000",
       });
     }
-  }, [selectedItem, length]);
+  }, [selectedItem, length, onWeightChange]);
+
+  useEffect(() => {
+    calculateWeight();
+  }, [calculateWeight]);
 
   return (
     <div className="obliczenia">
       <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-        <select name="dwuteowniki" value={type} onChange={(e) => setType(e.target.value)}>
+        <select
+          name="dwuteowniki"
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+        >
           <option value="">Wybierz typ</option>
           <option value="I">Dwuteowniki IPN</option>
           <option value="IPE">Dwuteowniki IPE</option>
@@ -98,24 +104,36 @@ const DwuteownikAlu = ({ onWeightChange }) => {
         </label>
 
         {selectedItem && (
-          <p style={{margin:0}}>
-            Oznaczenie: <span style={{fontWeight:'600'}}>{selectedItem.Oznaczenie}</span>
+          <p style={{ margin: 0 }}>
+            Oznaczenie:{" "}
+            <span style={{ fontWeight: "600" }}>{selectedItem.Oznaczenie}</span>
             <br />
-            Wysokość: <span style={{fontWeight:'600'}}>{selectedItem.wysokosc} mm</span>
+            Wysokość:{" "}
+            <span style={{ fontWeight: "600" }}>
+              {selectedItem.wysokosc} mm
+            </span>
             <br />
-            Szerokość: <span style={{fontWeight:'600'}}>{selectedItem.szerokosc} mm</span>
+            Szerokość:{" "}
+            <span style={{ fontWeight: "600" }}>
+              {selectedItem.szerokosc} mm
+            </span>
             <br />
-            Grubość: <span style={{fontWeight:'600'}}>{selectedItem.grubosc} mm</span>
+            Grubość:{" "}
+            <span style={{ fontWeight: "600" }}>{selectedItem.grubosc} mm</span>
             <br />
-            Ścianka: <span style={{fontWeight:'600'}}>{selectedItem.scianka} mm</span>
+            Ścianka:{" "}
+            <span style={{ fontWeight: "600" }}>{selectedItem.scianka} mm</span>
             <br />
-            Łączenie: <span style={{fontWeight:'600'}}>{selectedItem.laczenie} mm</span>
+            Łączenie:{" "}
+            <span style={{ fontWeight: "600" }}>
+              {selectedItem.laczenie} mm
+            </span>
             <br />
-            Waga: <span style={{fontWeight:'600'}}>{selectedItem.waga} kg/m</span>
+            Waga:{" "}
+            <span style={{ fontWeight: "600" }}>{selectedItem.waga} kg/m</span>
           </p>
         )}
       </div>
-
     </div>
   );
 };

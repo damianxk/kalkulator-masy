@@ -1,28 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const KatownikiRownoramienne = ({ density, onWeightChange }) => {
   const [x, setX] = useState("");
   const [zBox, setZBox] = useState("");
   const [length, setLength] = useState("");
-  const [totalWeight, setTotalWeight] = useState(0);
-  const [totalWeightPerMeter, setTotalWeightPerMeter] = useState(0);
 
-  useEffect(() => {
-    calculateWeight();
-  }, [x / 1000, zBox / 1000, length, density]);
-
-  const calculateWeight = () => {
+  const calculateWeight = useCallback(() => {
     const calculatedWeight = ((x * zBox + (x - zBox) * zBox) * density) / 1000;
     const weight = calculatedWeight;
     const weightPerMeter = weight * length;
 
-    setTotalWeight(`${weight.toFixed(3)}`);
-    setTotalWeightPerMeter(`${weightPerMeter.toFixed(3)}`);
     onWeightChange({
       totalWeight: weight.toFixed(3),
       totalWeightPerKg: weightPerMeter.toFixed(3),
     });
-  };
+  }, [x, zBox, length, density, onWeightChange]);
+
+  useEffect(() => {
+    calculateWeight();
+  }, [calculateWeight]);
 
   return (
     <div className="obliczenia">

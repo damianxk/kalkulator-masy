@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const PretSzescio = ({ density, onWeightChange }) => {
   const [sideLength, setSideLength] = useState();
   const [length, setLength] = useState();
-  const [totalWeight, setTotalWeight] = useState();
-  const [totalWeightPerMeter, setTotalWeightPerMeter] = useState();
 
-  useEffect(() => {
-    calculateWeight();
-  }, [sideLength / 100, length, density]);
-
-  const calculateWeight = () => {
+  const calculateWeight = useCallback(() => {
     const sanitizedSideLength = sanitize(sideLength);
     // Obliczanie powierzchni sześciokątnego pręta
     const surfaceArea =
@@ -23,13 +17,15 @@ const PretSzescio = ({ density, onWeightChange }) => {
     const weight = (volume * density) / 100;
     const weightPerMeter = (surfaceArea * 100 * density) / 10000;
 
-    setTotalWeight(`${weight.toFixed(3)}`);
-    setTotalWeightPerMeter(`${weightPerMeter.toFixed(3)}`);
     onWeightChange({
       totalWeight: weight.toFixed(3),
       totalWeightPerKg: weightPerMeter.toFixed(3),
     });
-  };
+  }, [sideLength, length, density, onWeightChange]);
+
+  useEffect(() => {
+    calculateWeight();
+  }, [calculateWeight]);
 
   // Funkcja do czyszczenia danych
   const sanitize = (value) => {
@@ -53,7 +49,6 @@ const PretSzescio = ({ density, onWeightChange }) => {
           />
         </label>
         <label>
-         
           <input
             inputMode="decimal"
             type="number"
@@ -66,7 +61,6 @@ const PretSzescio = ({ density, onWeightChange }) => {
           />
         </label>
       </section>
-
     </div>
   );
 };

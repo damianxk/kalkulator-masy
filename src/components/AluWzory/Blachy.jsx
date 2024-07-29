@@ -1,24 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const Blachy = ({ density, onWeightChange }) => {
   const [plotid, setPlotid] = useState("");
   const [storis, setStoris] = useState("");
   const [ilgis, setIlgis] = useState("");
-  const [totalWeight, setTotalWeight] = useState(0);
 
-  useEffect(() => {
-    calculateWeight();
-  }, [plotid / 1000, storis, ilgis / 1000, density]);
-
-  const calculateWeight = () => {
+  const calculateWeight = useCallback(() => {
     let volume = (plotid / 1000) * storis * (ilgis / 1000) * density;
     const weight = volume;
 
-    setTotalWeight(`${weight.toFixed(3)}`);
     onWeightChange({
       totalBlacha: weight.toFixed(3)
     });
-  };
+  }, [plotid, storis, ilgis, density, onWeightChange]);
+
+  useEffect(() => {
+    calculateWeight();
+  }, [calculateWeight]);
 
   return (
     <div className="obliczenia">

@@ -1,30 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const ProfilZamknietyKwadratowy = ({ density, onWeightChange }) => {
   const [width, setWidth] = useState("");
   const [thickness, setThickness] = useState("");
   const [length, setLength] = useState("");
-  const [totalWeight, setTotalWeight] = useState(0);
-  const [totalWeightPerMeter, setTotalWeightPerMeter] = useState(0);
 
-  useEffect(() => {
-    calculateWeight();
-  }, [width / 1000, thickness / 1000, length, density]);
-
-  const calculateWeight = () => {
+  const calculateWeight = useCallback(() => {
     const outerVolume = Math.pow(width / 1000, 2) * 1000;
     const innerVolume = Math.pow((width - 2 * thickness) / 1000, 2) * 1000;
     const volume = outerVolume - innerVolume;
     const weightPerMeter = volume * density; // Assuming the density of aluminium is density g/cm^3
     const totalWeight = weightPerMeter * length;
 
-    setTotalWeight(`${totalWeight.toFixed(3)}`);
-    setTotalWeightPerMeter(`${weightPerMeter.toFixed(3)}`);
     onWeightChange({
       totalWeight: totalWeight.toFixed(3),
       totalWeightPerKg: weightPerMeter.toFixed(3),
     });
-  };
+  }, [width, thickness, length, density, onWeightChange]);
+
+  useEffect(() => {
+    calculateWeight();
+  }, [calculateWeight]);
 
   return (
     <div className="obliczenia">
