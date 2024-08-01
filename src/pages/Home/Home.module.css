@@ -4,6 +4,22 @@
     gap: 5px;
   }
 }
+@media screen and (max-width: 768px) {
+  .rightbar{
+    display: none;
+  }
+  .mobileads{
+    display: flex;
+  }
+}
+@media screen and (min-width: 768px) {
+  
+  .mobileads{
+    display: none;
+  }
+}
+
+
 
 .button {
   padding: 10px;
@@ -55,6 +71,10 @@ box-shadow: inset 2px 2px 3px 0px #919191;
 
 .fullheight {
   margin-top: 30px;
+}
+.mobileads{
+  height: 200px;
+  margin-bottom: 30px;
 }
 
 .rightbar{

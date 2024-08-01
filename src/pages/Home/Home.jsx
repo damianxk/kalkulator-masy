@@ -8,6 +8,8 @@ import gestoscstali from "../../data/gestoscstali.json";
 import gestoscnierdzewnej from "../../data/gestoscnierdzewnej.json";
 import RightBar from "../../components/RightBar/RightBar";
 import ButtomBar from "../../components/ButtomBar/ButtomBar";
+import PostList from "../../components/PostList/PostList";
+import MobileTopBar from "../../components/MobileTopBar/MobileTopBar";
 
 const Home = () => {
   const [activeComponent, setActiveComponent] = useState("AluList");
@@ -19,6 +21,9 @@ const Home = () => {
       <main>
         <section className={css.fullheight}>
           <section className={css.home}>
+            <div className={css.mobileads}>
+              <MobileTopBar />
+            </div>
             <div className={css.buttonList}>
               <button
                 onClick={() => {
@@ -68,6 +73,7 @@ const Home = () => {
         </div>
       </main>
       <ButtomBar/>
+      <PostList/>
       
     </>
   );
