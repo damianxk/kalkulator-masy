@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { FloatLabel} from "primereact/floatlabel";
+import { InputNumber } from "primereact/inputnumber";
 
 const Blachy = ({ density, onWeightChange }) => {
   const [plotid, setPlotid] = useState("");
@@ -22,55 +24,22 @@ const Blachy = ({ density, onWeightChange }) => {
   return (
     <div className="obliczenia">
       <section style={{ display: "flex", gap: "50px" }}>
-        <label name="szerokosc">
-          <input
-            inputMode="decimal"
-            type="number"
-            placeholder="[A] Wpisz szerokość (mm)"
-            value={storis}
-            onChange={(e) => {
-              setStoris(e.target.value);
-            }}
-            name="szerokosc"
-          />
-        </label>
-        <label>
-          <input
-            inputMode="decimal"
-            type="number"
-            placeholder="[B] Wpisz grubość (mm)"
-            value={plotid}
-            onChange={(e) => {
-              setPlotid(e.target.value);
-            }}
-            name="grubosc"
-            />
-        </label>
-        <label>
-          <input
-            inputMode="decimal"
-            type="number"
-            placeholder="[C] Wpisz długość (mm)"
-            value={ilgis}
-            onChange={(e) => {
-              setIlgis(e.target.value);
-            }}
-            name="dlugosc"
-            />
-        </label>
-        <label>
-          <p className="countlabel">Ilość:</p>
-          <input
-            inputMode="decimal"
-            type="number"
-            placeholder="Wpisz ilość (szt.)"
-            value={count}
-            onChange={(e) => {
-              setCount(e.target.value);
-            }}
-            name="ilosc"
-            />
-        </label>
+        <FloatLabel className="textinputlabel">
+          <InputNumber id="storis-input" value={storis} onValueChange={(e) => setStoris(e.value)} />
+          <label htmlFor="storis-input">[B] Wpisz grubość (mm)</label>
+        </FloatLabel>
+        <FloatLabel className="textinputlabel">
+          <InputNumber id="plotid-input" value={plotid} onValueChange={(e) => setPlotid(e.value)} />
+          <label htmlFor="plotid-input">[B] Wpisz grubość (mm)</label>
+        </FloatLabel>
+        <FloatLabel className="textinputlabel">
+          <InputNumber id="ilgis-input" value={ilgis} onValueChange={(e) => setIlgis(e.value)} />
+          <label htmlFor="ilgis-input">[C] Wpisz długość (mm)</label>
+        </FloatLabel>
+        <FloatLabel className="textinputlabel">
+          <InputNumber id="count-input" value={count} onValueChange={(e) => setCount(e.value)} />
+          <label htmlFor="count-input">Wpisz ilość (szt.)</label>
+        </FloatLabel>
       </section>
     </div>
   );

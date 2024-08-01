@@ -56,3 +56,11 @@ box-shadow: inset 2px 2px 3px 0px #919191;
 .fullheight {
   margin-top: 30px;
 }
+
+.rightbar{
+  /* border: solid 1px; */
+  margin-left: 50px;
+  margin-top: 0;
+  width: 800px;
+  height: 700px;
+}

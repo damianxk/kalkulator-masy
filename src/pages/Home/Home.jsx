@@ -6,6 +6,8 @@ import Aluminium from "../Aluminium/Aluminium";
 import gestoscalu from "../../data/gestoscalu.json";
 import gestoscstali from "../../data/gestoscstali.json";
 import gestoscnierdzewnej from "../../data/gestoscnierdzewnej.json";
+import RightBar from "../../components/RightBar/RightBar";
+import ButtomBar from "../../components/ButtomBar/ButtomBar";
 
 const Home = () => {
   const [activeComponent, setActiveComponent] = useState("AluList");
@@ -61,7 +63,12 @@ const Home = () => {
             </section>
           </section>
         </section>
+        <div className={css.rightbar}>
+          <RightBar/>
+        </div>
       </main>
+      <ButtomBar/>
+      
     </>
   );
 };

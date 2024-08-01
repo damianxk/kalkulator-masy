@@ -19,6 +19,7 @@ export default function App() {
         <Route path="/stal/:itemId" element={<StalItem />} />
         <Route path="/cart" element={<Cart />} /> */}
       {/* </Routes> */}
+      
     </StrictMode>
   );
 }
