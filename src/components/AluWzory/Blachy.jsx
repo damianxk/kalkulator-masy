@@ -4,15 +4,16 @@ const Blachy = ({ density, onWeightChange }) => {
   const [plotid, setPlotid] = useState("");
   const [storis, setStoris] = useState("");
   const [ilgis, setIlgis] = useState("");
+  const [count, setCount] = useState(1);
 
   const calculateWeight = useCallback(() => {
     let volume = (plotid / 1000) * storis * (ilgis / 1000) * density;
-    const weight = volume;
+    const weight =  count * volume;
 
     onWeightChange({
       totalBlacha: weight.toFixed(3)
     });
-  }, [plotid, storis, ilgis, density, onWeightChange]);
+  }, [plotid, storis, ilgis, count, density, onWeightChange]);
 
   useEffect(() => {
     calculateWeight();
@@ -55,6 +56,19 @@ const Blachy = ({ density, onWeightChange }) => {
               setIlgis(e.target.value);
             }}
             name="dlugosc"
+            />
+        </label>
+        <label>
+          <p className="countlabel">Ilość:</p>
+          <input
+            inputMode="decimal"
+            type="number"
+            placeholder="Wpisz ilość (szt.)"
+            value={count}
+            onChange={(e) => {
+              setCount(e.target.value);
+            }}
+            name="ilosc"
             />
         </label>
       </section>
