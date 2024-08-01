@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
+import {FloatLabel} from 'primereact/floatlabel';
+import {InputNumber} from 'primereact/inputnumber'
 
 const DwuteownikAlu = ({ onWeightChange }) => {
   const [length, setLength] = useState("");
@@ -6,6 +8,7 @@ const DwuteownikAlu = ({ onWeightChange }) => {
   const [data, setData] = useState([]);
   const [selectedOption, setSelectedOption] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
+  const [count, setCount] = useState(1);
 
   const fetchData = useCallback(() => {
     let url;
@@ -49,8 +52,8 @@ const DwuteownikAlu = ({ onWeightChange }) => {
   const calculateWeight = useCallback(() => {
     if (selectedItem && selectedItem.waga !== null) {
       onWeightChange({
-        totalWeight: selectedItem.waga.toFixed(3),
-        totalWeightPerKg: (selectedItem.waga * length).toFixed(3),
+        totalWeight: selectedItem.waga.toFixed(3) * count,
+        totalWeightPerKg: (selectedItem.waga * length * count).toFixed(3),
       });
     } else {
       onWeightChange({
@@ -90,18 +93,15 @@ const DwuteownikAlu = ({ onWeightChange }) => {
             </option>
           ))}
         </select>
-        <label>
-          <input
-            inputMode="decimal"
-            type="number"
-            placeholder="[D] Wpisz długość dwuteownika (m)"
-            value={length}
-            onChange={(e) => {
-              setLength(e.target.value);
-            }}
-            name="dlugosc"
-          />
-        </label>
+       
+        <FloatLabel className="textinputlabel">
+          <InputNumber id="length-input" value={length} onValueChange={(e) => setLength(e.value)} />
+          <label htmlFor="length-input">[D] Wpisz długość dwuteownika (m)</label>
+        </FloatLabel>
+        <FloatLabel className="textinputlabel">
+          <InputNumber id="count-input" value={count} onValueChange={(e) => setCount(e.value)} />
+          <label htmlFor="count-input">Wpisz ilość (szt.)</label>
+        </FloatLabel>
 
         {selectedItem && (
           <p style={{ margin: 0 }}>
