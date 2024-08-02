@@ -6,7 +6,7 @@ const Rura = ({ density, onWeightChange }) => {
   const [diameter, setDiameter] = useState("");
   const [thickness, setThickness] = useState("");
   const [length, setLength] = useState("");
-  const [count,setCount] = useState(1);
+  const [count, setCount] = useState(1);
 
   const calculateWeight = useCallback(() => {
     const outerRadius = diameter / 2; // cm

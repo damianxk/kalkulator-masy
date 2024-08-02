@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import css from "./AluList.module.css";
 import AluItemDetail from "../../components/AluItemDetail/AluItemDetail";
+import { useCallback } from "react";
 
 const AluList = ({ items, activeComponent, density, setDensity }) => {
   const [selectedItem, setSelectedItem] = useState(items[0]);
@@ -10,9 +11,14 @@ const AluList = ({ items, activeComponent, density, setDensity }) => {
     totalWeightPerKg: 0.0,
   });
 
-  const handleWeightChange = (newWeights) => {
-    setWeights(newWeights);
-  };
+  const handleWeightChange = useCallback((newWeights) => {
+    setWeights((prevWeights) => {
+      if (JSON.stringify(prevWeights) !== JSON.stringify(newWeights)) {
+        return newWeights;
+      }
+      return prevWeights;
+    });
+  }, []);
 
   return (
     <>

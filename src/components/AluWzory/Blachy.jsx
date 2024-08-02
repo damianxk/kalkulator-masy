@@ -11,21 +11,22 @@ const Blachy = ({ density, onWeightChange }) => {
   const calculateWeight = useCallback(() => {
     let volume = (plotid / 1000) * storis * (ilgis / 1000) * density;
     const weight = volume * count;
-
     onWeightChange({
       totalBlacha: weight.toFixed(3)
     });
+    
   }, [plotid, storis, ilgis, count, density, onWeightChange]);
 
   useEffect(() => {
     calculateWeight();
+    
   }, [calculateWeight]);
 
   return (
     <div className="obliczenia">
       <section style={{ display: "flex", gap: "50px" }}>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="storis-input" value={storis} onChange={(e) => setStoris(e.value)} placeholder="[B] Wpisz grubość (mm)" />
+          <InputNumber id="storis-input" value={storis} onChange={(e) => setStoris(e.value)} />
           <label htmlFor="storis-input">[B] Wpisz grubość (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
