@@ -1,5 +1,5 @@
 .post{
-    width: 300px;
+    width: 200px;
     background-color: #d8d8d8;
     padding-bottom: 20px;
     margin-left: 25px;
@@ -10,31 +10,32 @@
 .category{
     padding-top: 10px;
     color: red;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
     padding-left: 20px;
 }
 .posttitle{
     padding-left: 20px;
     padding-top: 10px;
-    font-size: 22px;
+    font-size: 14px;
     font-weight: 600;
 }
 .postdata{
     padding-top: 10px;
     padding-left: 30px;
-    font-size: smaller;
+    font-size: 9px;
 }
 .postdesc{
-    font-size: small;
+    font-size: 12px;
     padding-left: 20px;
     padding-right: 20px;
 }
 .link{
     font-weight: 600;
+    font-size: 12px;
     padding: 5px;
     background-color: #d8d8d8;
-    margin-left: 130px;
+    margin-left: 50px;
     border: none;
     color: #3b3b3b;
 

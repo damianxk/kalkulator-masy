@@ -1,8 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import img1 from '../../assets/carport-1100x300.png';
-import img2 from '../../assets/mslide1.png';
-import img3 from '../../assets/mslide2.png';
+import img1 from '../../assets/Carport/carport-1100x300.png';
+import img2 from '../../assets/Marketstal/marketstal-1100x300.png';
+import img3 from '../../assets/Profile/profile-ocynkowane-1100x300.png';
 import css from './MobileTopBar.module.css'
 
 
@@ -11,8 +11,8 @@ const MobileTopBar = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const images = [
       {img: img1, link: 'https://ulamex.com.pl/carport'},
-      {img: img2, link: ''},
-      {img: img3, link: ''},
+      {img: img2, link: 'https://marketstal.pl/'},
+      {img: img3, link: 'https://profileocynkowane.com.pl/'},
     ];
     useEffect(() => {
         const interval = setInterval(() => {

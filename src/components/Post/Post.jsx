@@ -7,7 +7,7 @@ export const Post = ({title, desc, imgpath, data, link}) => {
 
     <a href={link} className={css.post}>
       <div className={css.postimg}>
-        <img src={imgpath} alt="Article img" width={'300px'} />
+        <img src={imgpath} alt="Article img" width={'200px'} />
       </div>
       <div className={css.category}>
         PORADNIK

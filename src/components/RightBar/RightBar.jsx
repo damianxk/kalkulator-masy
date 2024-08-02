@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import img1 from '../../assets/carport-300x1100.png';
-import img2 from '../../assets/slide2.jpg';
-import img3 from '../../assets/slide3.jpg';
+import img1 from '../../assets/Carport/carport-300x1100.png';
+import img2 from '../../assets/Marketstal/marketstal-300x1100.png';
+import img3 from '../../assets/Profile/profile-ocynkowane-300x1100.png';
 
 const RightBar = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const images = [
         {img: img1, link: 'https://ulamex.com.pl/carport'},
-        {img: img2, link: ''},
-        {img: img3, link: ''},
+        {img: img2, link: 'https://marketstal.pl/'},
+        {img: img3, link: 'https://profileocynkowane.com.pl/'},
     ];
     useEffect(() => {
         const interval = setInterval(() => {
