@@ -27,7 +27,6 @@ const Katowniki = ({ density, onWeightChange }) => {
   return (
     <div className="obliczenia">
       <section style={{ display: "flex", gap: "50px" }}>
-        
         <FloatLabel className="textinputlabel">
           <InputNumber id="X-input" value={x} onValueChange={(e) => setX(e.value)} />
           <label htmlFor="X-input">[A] Wpisz szerokość (mm)</label>
@@ -37,7 +36,7 @@ const Katowniki = ({ density, onWeightChange }) => {
           <label htmlFor="Y-input">[B] Wpisz wysokość (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="zBox-input" value={length} onValueChange={(e) => setZBox(e.value)} />
+          <InputNumber id="zBox-input" value={zBox} onValueChange={(e) => setZBox(e.value)} />
           <label htmlFor="zBox-input">[C] Wpisz grubość ścianki (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">

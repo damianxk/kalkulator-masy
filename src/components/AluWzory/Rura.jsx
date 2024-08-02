@@ -37,24 +37,12 @@ const Rura = ({ density, onWeightChange }) => {
   return (
     <div className="obliczenia">
       <section style={{ display: "flex", gap: "50px" }}>
-        <label>
-          <input
-            inputMode="decimal"
-            type="number"
-            placeholder="[A] Wpisz średnicę (mm)"
-            value={diameter}
-            onChange={(e) => {
-              setDiameter(e.target.value);
-            }}
-            name="srednica"
-          />
-        </label>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="diameter-input" value={length} onValueChange={(e) => setDiameter(e.value)} />
+          <InputNumber id="diameter-input" value={diameter} onValueChange={(e) => setDiameter(e.value)} />
           <label htmlFor="diameter-input">[A] Wpisz średnicę (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="thickness-input" value={length} onValueChange={(e) => setThickness(e.value)} />
+          <InputNumber id="thickness-input" value={thickness} onValueChange={(e) => setThickness(e.value)} />
           <label htmlFor="thickness-input">[B] Wpisz grubość ścianki (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">

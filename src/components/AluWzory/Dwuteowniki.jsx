@@ -93,16 +93,16 @@ const DwuteownikAlu = ({ onWeightChange }) => {
             </option>
           ))}
         </select>
-       
-        <FloatLabel className="textinputlabel">
-          <InputNumber id="length-input" value={length} onValueChange={(e) => setLength(e.value)} />
-          <label htmlFor="length-input">[D] Wpisz długość dwuteownika (m)</label>
-        </FloatLabel>
-        <FloatLabel className="textinputlabel">
-          <InputNumber id="count-input" value={count} onValueChange={(e) => setCount(e.value)} />
-          <label htmlFor="count-input">Wpisz ilość (szt.)</label>
-        </FloatLabel>
-
+        <section style={{ display: "flex", gap: "50px", marginLeft: "-10px" }}>
+          <FloatLabel className="textinputlabel">
+            <InputNumber id="length-input" value={length} onValueChange={(e) => setLength(e.value)} />
+            <label htmlFor="length-input">[D] Wpisz długość dwuteownika (m)</label>
+          </FloatLabel>
+          <FloatLabel className="textinputlabel">
+            <InputNumber id="count-input" value={count} onValueChange={(e) => setCount(e.value)} />
+            <label htmlFor="count-input">Wpisz ilość (szt.)</label>
+          </FloatLabel>
+          </section>
         {selectedItem && (
           <p style={{ margin: 0 }}>
             Oznaczenie:{" "}
