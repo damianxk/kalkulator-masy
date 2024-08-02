@@ -13,14 +13,14 @@ const ProfilZamkniety = ({ density, onWeightChange }) => {
     const outerVolume = x * y * 1000;
     const innerVolume = (x - 2 * zBox) * (y - 2 * zBox) * 1000;
     const volume = outerVolume - innerVolume;
-    const weightPerMeter = (volume * density) / 1000000; // Assuming the density of aluminium is density g/cm^3
-    const totalWeight = weightPerMeter * length;
+    const weightPerMeter = (volume * density) / 1000000 * count; // Assuming the density of aluminium is density g/cm^3
+    const totalWeight = weightPerMeter * length * count;
 
     onWeightChange({
-      totalWeight: totalWeight.toFixed(3) * count,
-      totalWeightPerKg: weightPerMeter.toFixed(3) * count,
+      totalWeight: totalWeight.toFixed(3),
+      totalWeightPerKg: weightPerMeter.toFixed(3),
     });
-  }, [x, y, zBox, length, density, onWeightChange]);
+  }, [x, y, zBox, length, count, density, onWeightChange]);
 
   useEffect(() => {
     calculateWeight();
@@ -31,23 +31,23 @@ const ProfilZamkniety = ({ density, onWeightChange }) => {
       <section style={{ display: "flex", gap: "50px" }}>
         
         <FloatLabel className="textinputlabel">
-          <InputNumber id="x-input" value={x} onValueChange={(e) => setX(e.value)} />
+          <InputNumber id="x-input" value={x} onChange={(e) => setX(e.value)} />
           <label htmlFor="x-input">[A] Wpisz szerokość profilu (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="y-input" value={y} onValueChange={(e) => setY(e.value)} />
+          <InputNumber id="y-input" value={y} onChange={(e) => setY(e.value)} />
           <label htmlFor="y-input">[B] Wpisz wysokość profilu (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="zBox-input" value={zBox} onValueChange={(e) => setZBox(e.value)} />
+          <InputNumber id="zBox-input" value={zBox} onChange={(e) => setZBox(e.value)} />
           <label htmlFor="zBox-input">[C] Wpisz grubość ścianki (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="length-input" value={length} onValueChange={(e) => setLength(e.value)} />
+          <InputNumber id="length-input" value={length} onChange={(e) => setLength(e.value)} />
           <label htmlFor="length-input">[D] Wpisz długość profilu (m)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="count-input" value={count} onValueChange={(e) => setCount(e.value)} />
+          <InputNumber id="count-input" value={count} onChange={(e) => setCount(e.value)} />
           <label htmlFor="count-input">Wpisz ilość (szt.)</label>
         </FloatLabel>
       </section>

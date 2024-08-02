@@ -10,14 +10,14 @@ const Plaskownik = ({ density, onWeightChange }) => {
 
   const calculateWeight = useCallback(() => {
     const volume = width * thickness * length * 100; // cm^3
-    const weight = (volume * density) / 100000; // kg
-    const weightPerMeter = (width * thickness * 1 * 10 * density) / 10000; // kg/m
+    const weight = (volume * density) / 100000 * count; // kg
+    const weightPerMeter = (width * thickness * 1 * 10 * density) / 10000 * count; // kg/m
 
     onWeightChange({
-      totalWeight: weight.toFixed(3) * count,
-      totalWeightPerKg: weightPerMeter.toFixed(3) * count,
+      totalWeight: weight.toFixed(3),
+      totalWeightPerKg: weightPerMeter.toFixed(3),
     });
-  }, [width, thickness, length, density, onWeightChange]);
+  }, [width, thickness, length, count, density, onWeightChange]);
 
   useEffect(() => {
     calculateWeight();
@@ -27,19 +27,19 @@ const Plaskownik = ({ density, onWeightChange }) => {
     <div className="obliczenia">
       <section style={{ display: "flex", gap: "50px" }}>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="width-input" value={width} onValueChange={(e) => setWidth(e.value)} />
+          <InputNumber id="width-input" value={width} onChange={(e) => setWidth(e.value)} />
           <label htmlFor="width-input">[A] Wpisz szerokość płaskownika (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="thickness-input" value={thickness} onValueChange={(e) => setThickness(e.value)} />
+          <InputNumber id="thickness-input" value={thickness} onChange={(e) => setThickness(e.value)} />
           <label htmlFor="thickness-input">[B] Wpisz grubość płaskownika (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="length-input" value={length} onValueChange={(e) => setLength(e.value)} />
+          <InputNumber id="length-input" value={length} onChange={(e) => setLength(e.value)} />
           <label htmlFor="length-input">[C] Wpisz długość płaskownika(m)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="count-input" value={count} onValueChange={(e) => setCount(e.value)} />
+          <InputNumber id="count-input" value={count} onChange={(e) => setCount(e.value)} />
           <label htmlFor="count-input">Wpisz ilość (szt.)</label>
         </FloatLabel>
       </section>

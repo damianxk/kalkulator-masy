@@ -50,10 +50,10 @@ const DwuteownikAlu = ({ onWeightChange }) => {
   }, [selectedOption, data]);
 
   const calculateWeight = useCallback(() => {
-    if (selectedItem && selectedItem.waga !== null) {
+    if (selectedItem && selectedItem.waga * count !== null) {
       onWeightChange({
-        totalWeight: selectedItem.waga.toFixed(3) * count,
-        totalWeightPerKg: (selectedItem.waga * length * count).toFixed(3),
+        totalWeight: selectedItem.waga.toFixed(3),
+        totalWeightPerKg: (selectedItem.waga * length).toFixed(3),
       });
     } else {
       onWeightChange({
@@ -61,7 +61,7 @@ const DwuteownikAlu = ({ onWeightChange }) => {
         totalWeightPerKg: "0.000",
       });
     }
-  }, [selectedItem, length, onWeightChange]);
+  }, [selectedItem, length, count, onWeightChange]);
 
   useEffect(() => {
     calculateWeight();
@@ -95,11 +95,11 @@ const DwuteownikAlu = ({ onWeightChange }) => {
         </select>
         <section style={{ display: "flex", gap: "50px", marginLeft: "-10px" }}>
           <FloatLabel className="textinputlabel">
-            <InputNumber id="length-input" value={length} onValueChange={(e) => setLength(e.value)} />
+            <InputNumber id="length-input" value={length} onChange={(e) => setLength(e.value)} />
             <label htmlFor="length-input">[D] Wpisz długość dwuteownika (m)</label>
           </FloatLabel>
           <FloatLabel className="textinputlabel">
-            <InputNumber id="count-input" value={count} onValueChange={(e) => setCount(e.value)} />
+            <InputNumber id="count-input" value={count} onChange={(e) => setCount(e.value)} />
             <label htmlFor="count-input">Wpisz ilość (szt.)</label>
           </FloatLabel>
           </section>

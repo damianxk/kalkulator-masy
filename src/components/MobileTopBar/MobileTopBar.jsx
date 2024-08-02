@@ -7,6 +7,7 @@ import css from './MobileTopBar.module.css'
 
 
 
+
 const MobileTopBar = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const images = [
@@ -21,9 +22,9 @@ const MobileTopBar = () => {
         return () => clearInterval(interval);
     }, [images.length]);
   return (
-    <div className="slider">
+    <div className={css.slider}>
       <a href={images[currentIndex].link}>
-        <img src={images[currentIndex].img} alt={`Slide ${currentIndex}`} width={'100%'} height={'100%'}/>
+        <img src={images[currentIndex].img} alt={`Slide ${currentIndex}`} width={'100%'} height={'150px'}/>
       </a>
     </div>
   )
