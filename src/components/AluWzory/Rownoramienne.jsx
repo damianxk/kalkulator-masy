@@ -31,7 +31,7 @@ const KatownikiRownoramienne = ({ density, onWeightChange }) => {
           <label htmlFor="x-input">[A] Wpisz szerokość (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="zBox-input" value={zBox} onValueChange={(e) => setzBox(e.value)} />
+          <InputNumber id="zBox-input" value={zBox} onValueChange={(e) => setZBox(e.value)} />
           <label htmlFor="zBox-input">[B] Wpisz grubość ścianki (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">

@@ -10,6 +10,7 @@
   }
   .mobileads{
     display: flex;
+    justify-content: center;
   }
 }
 @media screen and (min-width: 768px) {
@@ -18,7 +19,6 @@
     display: none;
   }
 }
-
 
 
 .button {
@@ -84,3 +84,8 @@ box-shadow: inset 2px 2px 3px 0px #919191;
   width: 800px;
   height: 700px;
 }
+.posts{
+  display: flex;
+  margin-bottom: 80px;
+}
+

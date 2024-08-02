@@ -10,7 +10,7 @@ const Blachy = ({ density, onWeightChange }) => {
 
   const calculateWeight = useCallback(() => {
     let volume = (plotid / 1000) * storis * (ilgis / 1000) * density;
-    const weight =  count * volume;
+    const weight = volume * count;
 
     onWeightChange({
       totalBlacha: weight.toFixed(3)
@@ -25,19 +25,19 @@ const Blachy = ({ density, onWeightChange }) => {
     <div className="obliczenia">
       <section style={{ display: "flex", gap: "50px" }}>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="storis-input" value={storis} onValueChange={(e) => setStoris(e.value)} />
+          <InputNumber id="storis-input" value={storis} onChange={(e) => setStoris(e.value)} placeholder="[B] Wpisz grubość (mm)" />
           <label htmlFor="storis-input">[B] Wpisz grubość (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="plotid-input" value={plotid} onValueChange={(e) => setPlotid(e.value)} />
+          <InputNumber id="plotid-input" value={plotid} onChange={(e) => setPlotid(e.value)} />
           <label htmlFor="plotid-input">[B] Wpisz grubość (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="ilgis-input" value={ilgis} onValueChange={(e) => setIlgis(e.value)} />
+          <InputNumber id="ilgis-input" value={ilgis} onChange={(e) => setIlgis(e.value)} />
           <label htmlFor="ilgis-input">[C] Wpisz długość (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="count-input" value={count} onValueChange={(e) => setCount(e.value)} />
+          <InputNumber id="count-input" value={count} onChange={(e) => setCount(e.value)} />
           <label htmlFor="count-input">Wpisz ilość (szt.)</label>
         </FloatLabel>
       </section>
