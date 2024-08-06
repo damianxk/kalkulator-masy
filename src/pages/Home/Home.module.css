@@ -4,6 +4,31 @@
     gap: 5px;
   }
 }
+@media screen and (max-width: 768px) {
+  .rightbar{
+    display: none;
+  }
+  .mobileads{
+    display: flex;
+    justify-content: center;
+  }
+  .posts{
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .rightbar{
+    display: flex;
+    align-items: center;
+  }
+  
+  .mobileads{
+    display: none;
+  }
+}
+
 
 .button {
   padding: 10px;
@@ -55,4 +80,23 @@ box-shadow: inset 2px 2px 3px 0px #919191;
 
 .fullheight {
   margin-top: 30px;
+}
+.mobileads{
+  height: 200px;
+  margin-bottom: 30px;
+}
+.rightbar{
+  /* border: solid 1px; */
+  margin-left: 50px;
+  width: 800px;
+  height: 700px;
+}
+.posts{
+  display: flex;
+  /* margin-bottom: 80px; */
+}
+
+.blog {
+  border-top: 3px solid #d63744;
+  padding-top: 20px;
 }

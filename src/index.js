@@ -1,5 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
+import { PrimeReactProvider } from 'primereact/api';
 
 import App from "./App";
 
@@ -8,6 +9,8 @@ const root = createRoot(rootElement);
 
 root.render(
   <BrowserRouter>
-    <App />
+    <PrimeReactProvider>
+      <App />
+    </PrimeReactProvider>
   </BrowserRouter>,
 );

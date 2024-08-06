@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { FloatLabel } from "primereact/floatlabel";
+import { InputNumber } from "primereact/inputnumber";
 
 const DwuteownikAlu = ({ onWeightChange }) => {
   const [length, setLength] = useState("");
@@ -6,6 +8,7 @@ const DwuteownikAlu = ({ onWeightChange }) => {
   const [data, setData] = useState([]);
   const [selectedOption, setSelectedOption] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
+  const [count, setCount] = useState(1);
 
   const fetchData = useCallback(() => {
     let url;
@@ -47,7 +50,7 @@ const DwuteownikAlu = ({ onWeightChange }) => {
   }, [selectedOption, data]);
 
   const calculateWeight = useCallback(() => {
-    if (selectedItem && selectedItem.waga !== null) {
+    if (selectedItem && selectedItem.waga * count !== null) {
       onWeightChange({
         totalWeight: selectedItem.waga.toFixed(3),
         totalWeightPerKg: (selectedItem.waga * length).toFixed(3),
@@ -58,10 +61,16 @@ const DwuteownikAlu = ({ onWeightChange }) => {
         totalWeightPerKg: "0.000",
       });
     }
-  }, [selectedItem, length, onWeightChange]);
+  }, [selectedItem, length, count, onWeightChange]);
 
   useEffect(() => {
-    calculateWeight();
+    const handler = setTimeout(() => {
+      calculateWeight();
+    }, 100); // Opóźnienie 100ms
+
+    return () => {
+      clearTimeout(handler);
+    };
   }, [calculateWeight]);
 
   return (
@@ -90,19 +99,26 @@ const DwuteownikAlu = ({ onWeightChange }) => {
             </option>
           ))}
         </select>
-        <label>
-          <input
-            inputMode="decimal"
-            type="number"
-            placeholder="[D] Wpisz długość dwuteownika (m)"
-            value={length}
-            onChange={(e) => {
-              setLength(e.target.value);
-            }}
-            name="dlugosc"
-          />
-        </label>
-
+        <section style={{ display: "flex", gap: "50px", marginLeft: "-10px" }}>
+          <FloatLabel className="textinputlabel">
+            <InputNumber
+              id="length-input"
+              value={length}
+              onChange={(e) => setLength(e.value)}
+            />
+            <label htmlFor="length-input">
+              [D] Wpisz długość (m)
+            </label>
+          </FloatLabel>
+          <FloatLabel className="textinputlabel">
+            <InputNumber
+              id="count-input"
+              value={count}
+              onChange={(e) => setCount(e.value)}
+            />
+            <label htmlFor="count-input">Wpisz ilość (szt.)</label>
+          </FloatLabel>
+        </section>
         {selectedItem && (
           <p style={{ margin: 0 }}>
             Oznaczenie:{" "}

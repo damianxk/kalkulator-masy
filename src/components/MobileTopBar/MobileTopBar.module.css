@@ -1,0 +1,9 @@
+/* .slider {
+  width: 100%;
+} */
+.image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; /* Dopasowuje obraz do kontenera, zachowując proporcje */
+  object-position: center right; /* Ustawia pozycję obrazu na środek i prawą stronę */
+}

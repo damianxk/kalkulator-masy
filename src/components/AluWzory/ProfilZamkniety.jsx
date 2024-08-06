@@ -1,79 +1,61 @@
 import React, { useState, useEffect, useCallback } from "react";
+import {FloatLabel} from 'primereact/floatlabel';
+import {InputNumber} from 'primereact/inputnumber';
 
 const ProfilZamkniety = ({ density, onWeightChange }) => {
   const [x, setX] = useState("");
   const [y, setY] = useState("");
   const [zBox, setZBox] = useState("");
   const [length, setLength] = useState("");
+  const [count, setCount] = useState(1);
 
   const calculateWeight = useCallback(() => {
     const outerVolume = x * y * 1000;
     const innerVolume = (x - 2 * zBox) * (y - 2 * zBox) * 1000;
     const volume = outerVolume - innerVolume;
-    const weightPerMeter = (volume * density) / 1000000; // Assuming the density of aluminium is density g/cm^3
-    const totalWeight = weightPerMeter * length;
+    const weightPerMeter = (volume * density) / 1000000 * count; // Assuming the density of aluminium is density g/cm^3
+    const totalWeight = weightPerMeter * length * count;
 
     onWeightChange({
       totalWeight: totalWeight.toFixed(3),
       totalWeightPerKg: weightPerMeter.toFixed(3),
     });
-  }, [x, y, zBox, length, density, onWeightChange]);
+  }, [x, y, zBox, length, count, density, onWeightChange]);
 
   useEffect(() => {
-    calculateWeight();
+    const handler = setTimeout(() => {
+      calculateWeight();
+    }, 100); // Opóźnienie 100ms
+
+    return () => {
+      clearTimeout(handler);
+    };
   }, [calculateWeight]);
 
   return (
     <div className="obliczenia">
       <section style={{ display: "flex", gap: "50px" }}>
-        <label>
-          <input
-            inputMode="decimal"
-            type="number"
-            placeholder="[A] Wpisz szerokość profilu (mm)"
-            value={x}
-            onChange={(e) => {
-              setX(e.target.value);
-            }}
-            name="szerokosc"
-          />
-        </label>
-        <label>
-          <input
-            inputMode="decimal"
-            type="number"
-            placeholder="[B] Wpisz wysokość profilu (mm)"
-            value={y}
-            onChange={(e) => {
-              setY(e.target.value);
-            }}
-            name="wysokosc"
-          />
-        </label>
-        <label>
-          <input
-            inputMode="decimal"
-            type="number"
-            placeholder="[C] Wpisz grubość ścianki (mm)"
-            value={zBox}
-            onChange={(e) => {
-              setZBox(e.target.value);
-            }}
-            name="grubosc"
-          />
-        </label>
-        <label>
-          <input
-            inputMode="decimal"
-            type="number"
-            placeholder="[D] Wpisz długość profilu (m)"
-            value={length}
-            onChange={(e) => {
-              setLength(e.target.value);
-            }}
-            name="dlugosc"
-          />
-        </label>
+        
+        <FloatLabel className="textinputlabel">
+          <InputNumber id="x-input" value={x} onChange={(e) => setX(e.value)} />
+          <label htmlFor="x-input">[A] Wpisz szerokość profilu (mm)</label>
+        </FloatLabel>
+        <FloatLabel className="textinputlabel">
+          <InputNumber id="y-input" value={y} onChange={(e) => setY(e.value)} />
+          <label htmlFor="y-input">[B] Wpisz wysokość profilu (mm)</label>
+        </FloatLabel>
+        <FloatLabel className="textinputlabel">
+          <InputNumber id="zBox-input" value={zBox} onChange={(e) => setZBox(e.value)} />
+          <label htmlFor="zBox-input">[C] Wpisz grubość ścianki (mm)</label>
+        </FloatLabel>
+        <FloatLabel className="textinputlabel">
+          <InputNumber id="length-input" value={length} onChange={(e) => setLength(e.value)} />
+          <label htmlFor="length-input">[D] Wpisz długość profilu (m)</label>
+        </FloatLabel>
+        <FloatLabel className="textinputlabel">
+          <InputNumber id="count-input" value={count} onChange={(e) => setCount(e.value)} />
+          <label htmlFor="count-input">Wpisz ilość (szt.)</label>
+        </FloatLabel>
       </section>
     </div>
   );
