@@ -27,7 +27,13 @@ const PretSzescio = ({ density, onWeightChange }) => {
   }, [sideLength, length, count, density, onWeightChange]);
 
   useEffect(() => {
-    calculateWeight();
+    const handler = setTimeout(() => {
+      calculateWeight();
+    }, 100); // Opóźnienie 100ms
+
+    return () => {
+      clearTimeout(handler);
+    };
   }, [calculateWeight]);
 
   // Funkcja do czyszczenia danych

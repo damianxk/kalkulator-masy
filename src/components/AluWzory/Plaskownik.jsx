@@ -20,7 +20,13 @@ const Plaskownik = ({ density, onWeightChange }) => {
   }, [width, thickness, length, count, density, onWeightChange]);
 
   useEffect(() => {
-    calculateWeight();
+    const handler = setTimeout(() => {
+      calculateWeight();
+    }, 100); // Opóźnienie 100ms
+
+    return () => {
+      clearTimeout(handler);
+    };
   }, [calculateWeight]);
 
   return (
@@ -28,15 +34,15 @@ const Plaskownik = ({ density, onWeightChange }) => {
       <section style={{ display: "flex", gap: "50px" }}>
         <FloatLabel className="textinputlabel">
           <InputNumber id="width-input" value={width} onChange={(e) => setWidth(e.value)} />
-          <label htmlFor="width-input">[A] Wpisz szerokość płaskownika (mm)</label>
+          <label htmlFor="width-input">[A] Wpisz szerokość (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
           <InputNumber id="thickness-input" value={thickness} onChange={(e) => setThickness(e.value)} />
-          <label htmlFor="thickness-input">[B] Wpisz grubość płaskownika (mm)</label>
+          <label htmlFor="thickness-input">[B] Wpisz grubość (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
           <InputNumber id="length-input" value={length} onChange={(e) => setLength(e.value)} />
-          <label htmlFor="length-input">[C] Wpisz długość płaskownika(m)</label>
+          <label htmlFor="length-input">[C] Wpisz długość (m)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
           <InputNumber id="count-input" value={count} onChange={(e) => setCount(e.value)} />

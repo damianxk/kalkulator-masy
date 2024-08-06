@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
-import {FloatLabel} from 'primereact/floatlabel';
-import {InputNumber} from 'primereact/inputnumber'
+import { FloatLabel } from "primereact/floatlabel";
+import { InputNumber } from "primereact/inputnumber";
 
 const DwuteownikAlu = ({ onWeightChange }) => {
   const [length, setLength] = useState("");
@@ -64,7 +64,13 @@ const DwuteownikAlu = ({ onWeightChange }) => {
   }, [selectedItem, length, count, onWeightChange]);
 
   useEffect(() => {
-    calculateWeight();
+    const handler = setTimeout(() => {
+      calculateWeight();
+    }, 100); // Opóźnienie 100ms
+
+    return () => {
+      clearTimeout(handler);
+    };
   }, [calculateWeight]);
 
   return (
@@ -95,14 +101,24 @@ const DwuteownikAlu = ({ onWeightChange }) => {
         </select>
         <section style={{ display: "flex", gap: "50px", marginLeft: "-10px" }}>
           <FloatLabel className="textinputlabel">
-            <InputNumber id="length-input" value={length} onChange={(e) => setLength(e.value)} />
-            <label htmlFor="length-input">[D] Wpisz długość dwuteownika (m)</label>
+            <InputNumber
+              id="length-input"
+              value={length}
+              onChange={(e) => setLength(e.value)}
+            />
+            <label htmlFor="length-input">
+              [D] Wpisz długość (m)
+            </label>
           </FloatLabel>
           <FloatLabel className="textinputlabel">
-            <InputNumber id="count-input" value={count} onChange={(e) => setCount(e.value)} />
+            <InputNumber
+              id="count-input"
+              value={count}
+              onChange={(e) => setCount(e.value)}
+            />
             <label htmlFor="count-input">Wpisz ilość (szt.)</label>
           </FloatLabel>
-          </section>
+        </section>
         {selectedItem && (
           <p style={{ margin: 0 }}>
             Oznaczenie:{" "}

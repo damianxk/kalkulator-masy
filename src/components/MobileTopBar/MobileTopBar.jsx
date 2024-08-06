@@ -11,21 +11,20 @@ import css from './MobileTopBar.module.css'
 const MobileTopBar = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const images = [
-      {img: img1, link: 'https://ulamex.com.pl/carport'},
+      {img: img1, link: 'https://carport.ulamex.com.pl/'},
       {img: img2, link: 'https://marketstal.pl/'},
       {img: img3, link: 'https://profileocynkowane.com.pl/'},
     ];
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 6000);
+        }, 60000);
         return () => clearInterval(interval);
     }, [images.length]);
   return (
     <div className={css.slider}>
       <a href={images[currentIndex].link}>
-        <img src={images[currentIndex].img} alt={`Slide ${currentIndex}`} width={'100%'} height={'150px'}/>
-      </a>
+        <img src={images[currentIndex].img} alt={`Slide ${currentIndex}`} className={css.image} />      </a>
     </div>
   )
 }

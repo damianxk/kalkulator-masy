@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { FloatLabel} from "primereact/floatlabel";
+import { FloatLabel } from "primereact/floatlabel";
 import { InputNumber } from "primereact/inputnumber";
 
 const Blachy = ({ density, onWeightChange }) => {
@@ -18,24 +18,33 @@ const Blachy = ({ density, onWeightChange }) => {
   }, [plotid, storis, ilgis, count, density, onWeightChange]);
 
   useEffect(() => {
-    calculateWeight();
-  }, [calculateWeight]);
+    const handler = setTimeout(() => {
+      calculateWeight();
+    }, 100); // Opóźnienie 100ms
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [plotid, storis, ilgis, count, calculateWeight]);
 
   return (
     <div className="obliczenia">
       <section style={{ display: "flex", gap: "50px" }}>
         <FloatLabel className="textinputlabel">
-          <InputNumber id="storis-input" value={storis} onChange={(e) => setStoris(e.value)} placeholder="[B] Wpisz grubość (mm)" />
+          <InputNumber id="plotid-input" value={plotid} onChange={(e) => setPlotid(e.value)} />
+          <label htmlFor="plotid-input">[A] Wpisz szerokość (mm)</label>
+        </FloatLabel>
+
+        <FloatLabel className="textinputlabel">
+          <InputNumber id="storis-input" value={storis} onChange={(e) => setStoris(e.value)} />
           <label htmlFor="storis-input">[B] Wpisz grubość (mm)</label>
         </FloatLabel>
-        <FloatLabel className="textinputlabel">
-          <InputNumber id="plotid-input" value={plotid} onChange={(e) => setPlotid(e.value)} />
-          <label htmlFor="plotid-input">[B] Wpisz grubość (mm)</label>
-        </FloatLabel>
+
         <FloatLabel className="textinputlabel">
           <InputNumber id="ilgis-input" value={ilgis} onChange={(e) => setIlgis(e.value)} />
           <label htmlFor="ilgis-input">[C] Wpisz długość (mm)</label>
         </FloatLabel>
+
         <FloatLabel className="textinputlabel">
           <InputNumber id="count-input" value={count} onChange={(e) => setCount(e.value)} />
           <label htmlFor="count-input">Wpisz ilość (szt.)</label>

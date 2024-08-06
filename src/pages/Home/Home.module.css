@@ -93,6 +93,10 @@ box-shadow: inset 2px 2px 3px 0px #919191;
 }
 .posts{
   display: flex;
-  margin-bottom: 80px;
+  /* margin-bottom: 80px; */
 }
 
+.blog {
+  border-top: 3px solid #d63744;
+  padding-top: 20px;
+}

@@ -20,7 +20,13 @@ const PretKwadratowy = ({ density, onWeightChange }) => {
   }, [sideLength, length, count, density, onWeightChange]);
 
   useEffect(() => {
-    calculateWeight();
+    const handler = setTimeout(() => {
+      calculateWeight();
+    }, 100); // Opóźnienie 100ms
+
+    return () => {
+      clearTimeout(handler);
+    };
   }, [calculateWeight]);
 
   return (
@@ -29,7 +35,7 @@ const PretKwadratowy = ({ density, onWeightChange }) => {
         
         <FloatLabel className="textinputlabel">
           <InputNumber id="sideLength-input" value={sideLength} onChange={(e) => setSideLength(e.value)} />
-          <label htmlFor="sideLength-input">[A] Wpisz długość boku pręta (mm)</label>
+          <label htmlFor="sideLength-input">[A] Wpisz długość boku (mm)</label>
         </FloatLabel>
         <FloatLabel className="textinputlabel">
           <InputNumber id="length-input" value={length} onChange={(e) => setLength(e.value)} />
