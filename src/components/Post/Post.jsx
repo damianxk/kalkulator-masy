@@ -21,7 +21,7 @@ export const Post = ({title, desc, imgpath, data, link}) => {
       <p className={css.postdesc}>
         {desc}
       </p>
-      <Button className={css.link} label="Dowiedz się więcej" link onClick={() =>  window.open('https://react.dev', '_blank')}/>
+      <Button className={css.link} label="Dowiedz się więcej" link onClick={() =>  window.open(link, '_blank')}/>
     </a>
   )
 }
